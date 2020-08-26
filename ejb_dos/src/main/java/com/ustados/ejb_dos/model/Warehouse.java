@@ -9,7 +9,6 @@ import javax.persistence.*;
  * 
  */
 @Entity
-@NamedQuery(name="Warehouse.findAll", query="SELECT w FROM Warehouse w")
 public class Warehouse implements Serializable {
 	private static final long serialVersionUID = 1L;
 
