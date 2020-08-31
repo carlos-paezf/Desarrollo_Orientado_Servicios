@@ -14,11 +14,11 @@
 		<class>com.ustados.ejb_dos.model.Warehouse</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
         <shared-cache-mode>ENABLE_SELECTIVE</shared-cache-mode>
-        <propierties>
-            <propierty name="hibernaate.connection.driver_class" 
-                       values="org.postgresql.Driver"/>
-            <propierty name="hibernate.dialect" 
+        <properties>
+            <property name="hibernate.connection.driver_class" 
+                       value="org.postgresql.Driver"/>
+            <property name="hibernate.dialect" 
                        value="org.hibernet.dialect.PostgresSQL82Dialect"/>
-        </propierties>
+        </properties>
 	</persistence-unit>
 </persistence>

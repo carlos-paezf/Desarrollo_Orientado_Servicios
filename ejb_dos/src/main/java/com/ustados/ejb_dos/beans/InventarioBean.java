@@ -22,18 +22,18 @@ public class InventarioBean<T> implements InventarioFacade<T>{
     //Contiene la logica de los metdos para realizar las transacciones con la BBDD y administracion de consultas
     private EntityManager entyMan;
 
-	@Override
+	@java.lang.Override
 	public void create(T t) throws Exception {
 		entyMan.persist(t);
 		
 	}
 
-	@Override
+	@java.lang.Override
 	public T update(T t) throws Exception {
 		return entyMan.merge(t);
 	}
 
-	@Override
+	@java.lang.Override
 	public void delete(T t) throws Exception {
 		entyMan.remove(t);	
 	}

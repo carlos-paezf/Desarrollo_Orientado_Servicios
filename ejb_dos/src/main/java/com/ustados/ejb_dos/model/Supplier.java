@@ -12,6 +12,10 @@ import javax.persistence.*;
 public class Supplier implements Serializable {
 	private static final long serialVersionUID = 1L;
 
+	//! Variable de la consulta
+	public static final String FIND_BY_ID = "Supplier.FIND_BY_ID";
+	public static final String FIND_ALL = "Supplier.FIND_ALL";
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id_supplier")

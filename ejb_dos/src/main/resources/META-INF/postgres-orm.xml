@@ -1,3 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<entity-mappings version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence/orm http://xmlns.jcp.org/xml/ns/persistence/orm_2_2.xsd">
+<entity-mappings version="2.2" 
+xmlns="http://xmlns.jcp.org/xml/ns/persistence/orm" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence/orm http://xmlns.jcp.org/xml/ns/persistence/orm_2_2.xsd">
+
+    <named-query name="City.FIND_BY_ID">
+        <query>SELECT c FROM city c WHERE c.id_city = :idCity</query>
+    </named-query>
+
+    <named-query name="City.FIND_ALL">
+        <query>SELECT c FROM city c </query>
+    </named-query>
+
+    <named-query name="Client.FIND_BY_ID">
+        <query>SELECT c FROM client c WHERE c.id_client = :idClient</query>
+    </named-query>
+
+    <named-query name="Client.FIND_ALL">
+        <query>SELECT c FROM client c </query>
+    </named-query>
+
+    <named-query name="Department.FIND_BY_ID">
+        <query>SELECT d FROM department d WHERE d.id_department = :idDepartment</query>
+    </named-query>
+
+    <named-query name="Department.FIND_ALL">
+        <query>SELECT d FROM department d </query>
+    </named-query>
+
+    <named-query name="Invoice.FIND_BY_ID">
+        <query>SELECT i FROM invoice i WHERE i.id_invoie = :idInvoice</query>
+    </named-query>
+
+    <named-query name="Invoice.FIND_ALL">
+        <query>SELECT i FROM invoice i </query>
+    </named-query>
+
+    <named-query name="Product.FIND_BY_ID">
+        <query>SELECT p FROM product p WHERE p.id_product = :idProduct</query>
+    </named-query>
+
+    <named-query name="Product.FIND_ALL">
+        <query>SELECT p FROM product p </query>
+    </named-query>
+
+    <named-query name="Stock.FIND_BY_ID">
+        <query>SELECT s FROM stock s WHERE s.id_stock = :idStock</query>
+    </named-query>
+
+    <named-query name="Stock.FIND_ALL">
+        <query>SELECT s FROM stock s </query>
+    </named-query>
+
+    <named-query name="Supplier.FIND_BY_ID">
+        <query>SELECT s FROM supplier s WHERE s.id_supplier = :idSupplier</query>
+    </named-query>
+
+    <named-query name="Supplier.FIND_ALL">
+        <query>SELECT s FROM supplier s </query>
+    </named-query>
+
+    <named-query name="Warehouse.FIND_BY_ID">
+        <query>SELECT w FROM warehouse w WHERE w.id_warehouse = :idWarehouse</query>
+    </named-query>
+
+    <named-query name="Warehouse.FIND_ALL">
+        <query>SELECT w FROM warehouse w </query>
+    </named-query>
+
 </entity-mappings>

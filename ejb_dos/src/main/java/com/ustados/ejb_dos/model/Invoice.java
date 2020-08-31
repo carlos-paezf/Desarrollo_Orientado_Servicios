@@ -13,6 +13,10 @@ import java.sql.Timestamp;
 public class Invoice implements Serializable {
 	private static final long serialVersionUID = 1L;
 
+	//! Variable de la consulta
+	public static final String FIND_BY_ID = "Invoice.FIND_BY_ID";
+	public static final String FIND_ALL = "Invoice.FIND_ALL";
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id_invoice")

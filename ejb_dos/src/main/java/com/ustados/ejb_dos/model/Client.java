@@ -10,9 +10,12 @@ import java.util.Date;
  * 
  */
 @Entity
-@NamedQuery(name="Client.findAll", query="SELECT c FROM Client c")
 public class Client implements Serializable {
 	private static final long serialVersionUID = 1L;
+
+	//! Variable de la consulta
+	public static final String FIND_BY_ID = "Client.FIND_BY_ID";
+	public static final String FIND_ALL = "Client.FIND_ALL";
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)

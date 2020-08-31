@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="ejb-jar" name="ejb_dos:ejb">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>ejb_dos</module>
+        <packaging>ejb</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="ejb_dos-0.0.1-SNAPSHOT.jar">
+      <element id="artifact" artifact-name="ejb_dos:ejb exploded" />
+    </root>
+  </artifact>
+</component>
