@@ -42,31 +42,32 @@ public class InventarioService<T> {
 	}
 
 	public T findByID(T t) throws Exception{
+		T result = null;
 		if (t instanceof Client){
 			Client c = (Client) t;
-			facadeObject.findByIdClient(c.getIdClient().intValue());
+			result = (T) facadeObject.findByIdClient(c.getIdClient().intValue());
 		} else if (t instanceof City){
 			City cy = (City) t;
-			facadeObject.findByIdCity(cy.getIdCity());
+			result = (T) facadeObject.findByIdCity(cy.getIdCity());
 		} else if (t instanceof Department){
 			Department d= (Department) t;
-			facadeObject.findByIdDepartment(d.getIdDepartment());
+			result = (T) facadeObject.findByIdDepartment(d.getIdDepartment());
 		}else if (t instanceof Invoice){
 			Invoice i = (Invoice) t;
-			facadeObject.findByIdInvoice(i.getIdInvoice().intValue());
+			result = (T) facadeObject.findByIdInvoice(i.getIdInvoice().intValue());
 		}else if (t instanceof Product){
 			Product p = (Product) t;
-			facadeObject.findByIdProduct(p.getIdProduct());
+			result = (T) facadeObject.findByIdProduct(p.getIdProduct());
 		}else if (t instanceof Stock){
 			Stock s = (Stock) t;
-			facadeObject.findByIdStock(s.getIdStock().intValue());
+			result = (T) facadeObject.findByIdStock(s.getIdStock().intValue());
 		}else if (t instanceof Supplier){
 			Supplier su = (Supplier) t;
-			facadeObject.findByIdSupplier(su.getIdSupplier());
+			result = (T) facadeObject.findByIdSupplier(su.getIdSupplier());
 		}else if (t instanceof Warehouse){
 			Warehouse w = (Warehouse) t;
-			facadeObject.findByIdWarehouse(w.getIdWarehouse());
+			result = (T) facadeObject.findByIdWarehouse(w.getIdWarehouse());
 		}
-		return t;
+		return result;
 	}
 }
