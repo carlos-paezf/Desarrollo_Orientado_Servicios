@@ -207,4 +207,10 @@ public class QuerysBean implements IObjectFacade {
         warehouses = q.getResultList();
         return warehouses;
     }
+
+	@Override
+	public List<Warehouse> findByIdSupp(int id) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

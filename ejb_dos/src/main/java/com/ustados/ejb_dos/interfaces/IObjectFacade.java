@@ -47,4 +47,12 @@ public interface IObjectFacade {
     public Warehouse findByIdWarehouse(int id) throws Exception;
 
     public List<Warehouse> findAllWarehouses() throws Exception;
+    
+    /**
+     * Busca las sedes según el proveedor
+     * @param id
+     * @return
+     * @throws Exception
+     */
+    public List<Warehouse> findByIdSupp(int id) throws Exception;
 }
