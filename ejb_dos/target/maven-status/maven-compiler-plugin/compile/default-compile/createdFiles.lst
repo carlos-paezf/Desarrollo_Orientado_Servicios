@@ -1,0 +1,13 @@
+com\ustados\ejb_dos\services\InventarioService.class
+com\ustados\ejb_dos\beans\InventarioBean.class
+com\ustados\ejb_dos\model\Stock.class
+com\ustados\ejb_dos\model\Invoice.class
+com\ustados\ejb_dos\model\Warehouse.class
+com\ustados\ejb_dos\interfaces\InventarioFacade.class
+com\ustados\ejb_dos\beans\QuerysBean.class
+com\ustados\ejb_dos\model\Department.class
+com\ustados\ejb_dos\model\Client.class
+com\ustados\ejb_dos\model\Supplier.class
+com\ustados\ejb_dos\model\City.class
+com\ustados\ejb_dos\model\Product.class
+com\ustados\ejb_dos\interfaces\IObjectFacade.class
