@@ -9,7 +9,7 @@ import javax.ejb.Stateless;
 
 import com.ustados.ejb_dos.modelpostgresql.Supplier;
 import com.ustados.ejb_dos.modelpostgresql.Warehouse;
-import com.ustados.ejb_dos.services.InventarioService;
+import com.ustados.ejb_dos.services.InventarioServicePostgreSQL;
 
 /**
  * @author DavidFerrer
@@ -19,7 +19,7 @@ import com.ustados.ejb_dos.services.InventarioService;
 @Stateless
 public class FacadeServices<T> implements Serializable {
     @EJB
-    InventarioService<T> inventarioService;
+    InventarioServicePostgreSQL<T> inventarioServicePostgreSQL;
 
     /**
      * Método que invoca la busqueda de las sucursales. Nos ayuda a hacer las
@@ -28,7 +28,7 @@ public class FacadeServices<T> implements Serializable {
     public List<Warehouse> findAll(int id) {
         List<Warehouse> warehouses = new ArrayList<Warehouse>();
         try {
-            warehouses = inventarioService.findAll();
+            warehouses = inventarioServicePostgreSQL.findAll();
         } catch (Exception e) {
             warehouses = null;
         }

@@ -32,6 +32,10 @@ public interface IObjectFacadeMySQL {
     public List<BusinessHeadquarterProvider> findAllBusinessHeadquarterProviders() throws Exception;
 
     public BusinessHeadquarterStock findByIdBusinessHeadquarterStock(int id) throws Exception;
+    
+    public List<BusinessHeadquarterStock> findAllBusinessHeadquarterStocks() throws Exception;
+    
+    public Costumer findByIdCostumer(int id) throws Exception;
 
     public List<Costumer> findAllCostumers() throws Exception;
 

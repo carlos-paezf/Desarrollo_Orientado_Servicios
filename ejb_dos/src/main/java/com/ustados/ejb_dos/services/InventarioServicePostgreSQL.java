@@ -22,7 +22,7 @@ import com.ustados.ejb_dos.modelpostgresql.*;
 @Local
 @Stateless
 @TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
-public class InventarioService<T> {
+public class InventarioServicePostgreSQL<T> {
 
 	@EJB
 	InventarioFacade<T> inventarioFacade;

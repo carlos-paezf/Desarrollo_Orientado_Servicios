@@ -17,13 +17,12 @@ import com.ustados.ejb_dos.modelmysql.*;
 @TransactionManagement(TransactionManagementType.CONTAINER)
 public class QuerysBeanMySQL implements IObjectFacadeMySQL {
 
-    @PersistenceContext(unitName = "ejb_dos")
+    @PersistenceContext(unitName = "ejb_dos_mysql")
     EntityManager entityManager;
 
     @Override
     public GeographicLocation findByIdGeographicLocation(int id) throws Exception {
-        // TODO Auto-generated method stub
-        return null;
+        return entityManager.find(GeographicLocation.class, id);
     }
 
     @Override
@@ -34,8 +33,7 @@ public class QuerysBeanMySQL implements IObjectFacadeMySQL {
 
     @Override
     public BusinessHeadquarter findByIdBusinessHeadquarter(int id) throws Exception {
-        // TODO Auto-generated method stub
-        return null;
+        return entityManager.find(BusinessHeadquarter.class, id);
     }
 
     @Override
@@ -46,8 +44,7 @@ public class QuerysBeanMySQL implements IObjectFacadeMySQL {
 
     @Override
     public BusinessHeadquarterProvider findByIdbBusinessHeadquarterProvider(int id) throws Exception {
-        // TODO Auto-generated method stub
-        return null;
+        return entityManager.find(BusinessHeadquarterProvider.class, id);
     }
 
     @Override
@@ -58,8 +55,7 @@ public class QuerysBeanMySQL implements IObjectFacadeMySQL {
 
     @Override
     public BusinessHeadquarterStock findByIdBusinessHeadquarterStock(int id) throws Exception {
-        // TODO Auto-generated method stub
-        return null;
+        return entityManager.find(BusinessHeadquarterStock.class, id);
     }
 
     @Override
@@ -70,8 +66,7 @@ public class QuerysBeanMySQL implements IObjectFacadeMySQL {
 
     @Override
     public InvoiceMySQL findByIdInvoiceMySQL(int id) throws Exception {
-        // TODO Auto-generated method stub
-        return null;
+        return entityManager.find(InvoiceMySQL.class, id);
     }
 
     @Override
@@ -82,8 +77,7 @@ public class QuerysBeanMySQL implements IObjectFacadeMySQL {
 
     @Override
     public ProductMySQL findByIdProductMySQL(int id) throws Exception {
-        // TODO Auto-generated method stub
-        return null;
+        return entityManager.find(ProductMySQL.class, id);
     }
 
     @Override
@@ -94,8 +88,7 @@ public class QuerysBeanMySQL implements IObjectFacadeMySQL {
 
     @Override
     public Provider findByIdProvider(int id) throws Exception {
-        // TODO Auto-generated method stub
-        return null;
+        return entityManager.find(Provider.class, id);
     }
 
     @Override
@@ -106,8 +99,7 @@ public class QuerysBeanMySQL implements IObjectFacadeMySQL {
 
     @Override
     public StockInvoice findByIdStockInvoice(int id) throws Exception {
-        // TODO Auto-generated method stub
-        return null;
+        return entityManager.find(StockInvoice.class, id);
     }
 
     @Override
@@ -118,8 +110,7 @@ public class QuerysBeanMySQL implements IObjectFacadeMySQL {
 
     @Override
     public StockMySQL findByIdStockMySQL(int id) throws Exception {
-        // TODO Auto-generated method stub
-        return null;
+        return entityManager.find(StockMySQL.class, id);
     }
 
     @Override
