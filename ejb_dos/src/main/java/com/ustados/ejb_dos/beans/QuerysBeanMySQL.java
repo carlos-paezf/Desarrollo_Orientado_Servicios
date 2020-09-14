@@ -119,5 +119,17 @@ public class QuerysBeanMySQL implements IObjectFacadeMySQL {
         return null;
     }
 
+    @Override
+    public List<BusinessHeadquarterStock> findAllBusinessHeadquarterStocks() throws Exception {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public Costumer findByIdCostumer(int id) throws Exception {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
     
 }
