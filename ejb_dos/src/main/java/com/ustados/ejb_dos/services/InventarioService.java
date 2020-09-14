@@ -8,9 +8,9 @@ import javax.ejb.Stateless;
 import javax.ejb.TransactionAttribute;
 import javax.ejb.TransactionAttributeType;
 
-import com.ustados.ejb_dos.interfaces.IObjectFacade;
+import com.ustados.ejb_dos.interfaces.IObjectFacadePostgreSQL;
 import com.ustados.ejb_dos.interfaces.InventarioFacade;
-import com.ustados.ejb_dos.model.*;
+import com.ustados.ejb_dos.modelpostgresql.*;
 
 /* 
  * 
@@ -28,7 +28,7 @@ public class InventarioService<T> {
 	InventarioFacade<T> inventarioFacade;
 
 	@EJB
-	IObjectFacade facadeObject;
+	IObjectFacadePostgreSQL facadeObject;
 
 	public void create(T t) throws Exception {
 		inventarioFacade.create(t);

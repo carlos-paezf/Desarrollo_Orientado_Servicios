@@ -1,24 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<persistence version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+<persistence version="2.2"
+	xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
 	<persistence-unit name="ejb_dos">
-        <provider>org.hibernate.ejb.HibernatePersistence</provider>
-        <jta-data-source>java:jboss/env/jdbc/intentariopg</jta-data-source>
-        <mapping-file>META-INF/postgres-orm.xml</mapping-file>
-		<class>com.ustados.ejb_dos.model.City</class>
-		<class>com.ustados.ejb_dos.model.Client</class>
-		<class>com.ustados.ejb_dos.model.Department</class>
-		<class>com.ustados.ejb_dos.model.Invoice</class>
-		<class>com.ustados.ejb_dos.model.Product</class>
-		<class>com.ustados.ejb_dos.model.Stock</class>
-		<class>com.ustados.ejb_dos.model.Supplier</class>
-		<class>com.ustados.ejb_dos.model.Warehouse</class>
-        <exclude-unlisted-classes>true</exclude-unlisted-classes>
-        <shared-cache-mode>ENABLE_SELECTIVE</shared-cache-mode>
-        <properties>
-            <property name="hibernate.connection.driver_class" 
-                       value="org.postgresql.Driver"/>
-            <property name="hibernate.dialect" 
-                       value="org.hibernet.dialect.PostgresSQL82Dialect"/>
-        </properties>
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<jta-data-source>java:jboss/env/jdbc/inventariopostgres</jta-data-source>
+		<mapping-file>META-INF/postgres-orm.xml</mapping-file>
+		<class>com.ustados.ejb_dos.modelpostgresql.City</class>
+		<class>com.ustados.ejb_dos.modelpostgresql.Client</class>
+		<class>com.ustados.ejb_dos.modelpostgresql.Department</class>
+		<class>com.ustados.ejb_dos.modelpostgresql.Invoice</class>
+		<class>com.ustados.ejb_dos.modelpostgresql.Product</class>
+		<class>com.ustados.ejb_dos.modelpostgresql.Stock</class>
+		<class>com.ustados.ejb_dos.modelpostgresql.Supplier</class>
+		<class>com.ustados.ejb_dos.modelpostgresql.Warehouse</class>
+		<class>com.ustados.ejb_dos.modelmysql.BusinessHeadquarter</class>
+		<class>com.ustados.ejb_dos.modelmysql.BusinessHeadquarterProvider</class>
+		<class>com.ustados.ejb_dos.modelmysql.BusinessHeadquarterStock</class>
+		<class>com.ustados.ejb_dos.modelmysql.Costumer</class>
+		<class>com.ustados.ejb_dos.modelmysql.GeographicLocation</class>
+		<class>com.ustados.ejb_dos.modelmysql.InvoiceMySQL</class>
+		<class>com.ustados.ejb_dos.modelmysql.ProductMySQL</class>
+		<class>com.ustados.ejb_dos.modelmysql.Provider</class>
+		<class>com.ustados.ejb_dos.modelmysql.StockMySQL</class>
+		<class>com.ustados.ejb_dos.modelmysql.StockInvoice</class>
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
+		<shared-cache-mode>ENABLE_SELECTIVE</shared-cache-mode>
+		<properties>
+			<property name="hibernate.connection.driver_class"
+				value="org.postgresql.Driver" />
+			<property name="hibernate.dialect"
+				value="org.hibernate.dialect.PostgresSQL82Dialect" />
+		</properties>
+	</persistence-unit>
+	<persistence-unit name="ejb_dos_mysql">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<jta-data-source>java:jboss/env/jdbc/inventariomysql</jta-data-source>
+		<mapping-file>META-INF/mysql-orm.xml</mapping-file>
+		<class>com.ustados.ejb.modelMysql.BusinessHeadquarter</class>
+		<class>com.ustados.ejb.modelMysql.BusinessHeadquarterProvider</class>
+		<class>com.ustados.ejb.modelMysql.BusinessHeadquarterStock</class>
+		<class>com.ustados.ejb.modelMysql.Costumer</class>
+		<class>com.ustados.ejb.modelMysql.GeographicLocation</class>
+		<class>com.ustados.ejb.modelMysql.InvoiceMysq</class>
+		<class>com.ustados.ejb.modelMysql.ProductMysql</class>
+		<class>com.ustados.ejb.modelMysql.Provider</class>
+		<class>com.ustados.ejb.modelMysql.StockMysql</class>
+		<class>com.ustados.ejb.modelMysql.StockInvoice</class>
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
+		<shared-cache-mode>ENABLE_SELECTIVE</shared-cache-mode>
+		<properties>
+			<property name="hibernate.connection.driver_class"
+				value="com.mysql.jdbc.Driver" />
+			<property name="hibernate.dialect"
+				value="org.hibernate.dialect.MySQLDialect" />
+			<property name="eclipselink.jdbc.cache-statements"
+				value="true" />
+		</properties>
 	</persistence-unit>
 </persistence>
+

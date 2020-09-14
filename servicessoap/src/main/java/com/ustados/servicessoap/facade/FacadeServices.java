@@ -7,8 +7,8 @@ import java.util.List;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
 
-import com.ustados.ejb_dos.model.Supplier;
-import com.ustados.ejb_dos.model.Warehouse;
+import com.ustados.ejb_dos.modelpostgresql.Supplier;
+import com.ustados.ejb_dos.modelpostgresql.Warehouse;
 import com.ustados.ejb_dos.services.InventarioService;
 
 /**
