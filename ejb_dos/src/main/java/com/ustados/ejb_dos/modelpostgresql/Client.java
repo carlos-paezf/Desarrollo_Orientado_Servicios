@@ -16,6 +16,7 @@ public class Client implements Serializable {
 	//! Variable de la consulta
 	public static final String FIND_BY_ID = "Client.FIND_BY_ID";
 	public static final String FIND_ALL = "Client.FIND_ALL";
+	public static final String FIND_BY_DOCUMENT = "Client.FIND_BY_DOCUMENT";
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)

@@ -12,8 +12,9 @@ import javax.jws.WebService;
 
 import org.apache.poi.ss.formula.functions.T;
 
+import com.ustados.ejb_dos.modelpostgresql.Client;
 import com.ustados.ejb_dos.modelpostgresql.Warehouse;
-import com.ustados.servicessoap.facade.FacadeServices;
+import com.ustados.servicessoap.facade.FacadeServicesPostgreSQL;
 
 /**
  * @author DavidFerrer ip:port/nombreproyecto/servicio.wsdl ejm->
@@ -24,10 +25,10 @@ import com.ustados.servicessoap.facade.FacadeServices;
 @WebService(name = "inventario")
 // ! Con esta anotacion defino el bean de session sin estado
 @Stateless
-public class InventarioUsta implements Serializable {
+public class InventarioPostgreSQLUsta implements Serializable {
 
     @EJB
-    FacadeServices<T> facade;
+    FacadeServicesPostgreSQL<T> facadeServicesPostgreSQL;
     /**
      * 
      */
@@ -37,10 +38,17 @@ public class InventarioUsta implements Serializable {
     public List<Warehouse> listWarehouses(@WebParam(name = "idSupplier") Long idSup) {
         List<Warehouse> w = new ArrayList<Warehouse>();
         try {
-            w = facade.findAll(idSup.intValue());
+            w = facadeServicesPostgreSQL.findAll(idSup.intValue());
         } catch (Exception e) {
             w = null;
         }
         return w;
+    }
+
+    @WebMethod(operationName = "clientByDocument")
+    public Client searchClientByDocument(@WebParam(name = "document") String document){
+        Client client = new Client();
+        client = facadeServicesPostgreSQL.searchClientDocument(document);
+        return client;
     }
 }

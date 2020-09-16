@@ -1,16 +1,14 @@
 package com.ustados.ejb_dos.services;
 
-import java.util.List;
-
 import javax.ejb.EJB;
 import javax.ejb.Local;
 import javax.ejb.Stateless;
 import javax.ejb.TransactionAttribute;
 import javax.ejb.TransactionAttributeType;
 
+import com.ustados.ejb_dos.emnus.MotorBdEnum;
 import com.ustados.ejb_dos.interfaces.IObjectFacadeMySQL;
 import com.ustados.ejb_dos.interfaces.InventarioFacade;
-import com.ustados.ejb_dos.modelmysql.*;
 
 /* 
  * 
@@ -42,43 +40,50 @@ public class InventarioServiceMySQL<T> {
         inventarioFacade.delete(t);
     }
 
-    public T findByID(T t) throws Exception {
+    public T searchByDocument(String document, MotorBdEnum bdMotor) throws Exception{
+        return inventarioFacade.searchByDocument(document, bdMotor);
+    }
+
+    public T findByID(int id, int clase) throws Exception {
         T result = null;
-        if (t instanceof BusinessHeadquarter) {
-            BusinessHeadquarter b = (BusinessHeadquarter) t;
-            result = (T) facadeObject.findByIdBusinessHeadquarter(b.getIdBusinessHeadquarter());
-        } else if (t instanceof BusinessHeadquarterProvider) {
-            BusinessHeadquarterProvider bp = (BusinessHeadquarterProvider) t;
-            result = (T) facadeObject.findByIdbBusinessHeadquarterProvider(bp.getIdBusinessHeadquarterProvider());
-        } else if (t instanceof BusinessHeadquarterStock) {
-            BusinessHeadquarterStock bs = (BusinessHeadquarterStock) t;
-            result = (T) facadeObject.findByIdBusinessHeadquarterStock(bs.getIdBusinessHeadquarterStock());
-        } else if (t instanceof Costumer) {
-            Costumer c = (Costumer) t;
-            result = (T) facadeObject.findByIdCostumer(c.getIdCostumer());
-        } else if (t instanceof GeographicLocation) {
-            GeographicLocation g = (GeographicLocation) t;
-            result = (T) facadeObject.findByIdGeographicLocation(g.getIdGeographicLocation());
-        } else if (t instanceof InvoiceMySQL) {
-            InvoiceMySQL i = (InvoiceMySQL) t;
-            result = (T) facadeObject.findByIdInvoiceMySQL(i.getIdInvoice());
-        } else if (t instanceof ProductMySQL) {
-            ProductMySQL p = (ProductMySQL) t;
-            result = (T) facadeObject.findByIdProductMySQL(p.getIdProduct());
-        } else if (t instanceof Provider) {
-            Provider pv = (Provider) t;
-            result = (T) facadeObject.findByIdProvider(pv.getIdProvider());
-        } else if (t instanceof StockInvoice) {
-            StockInvoice si = (StockInvoice) t;
-            result = (T) facadeObject.findByIdStockInvoice(si.getIdStockInvoice());
-        } else if (t instanceof StockMySQL) {
-            StockMySQL s = (StockMySQL) t;
-            result = (T) facadeObject.findByIdStockMySQL(s.getIdStock());
+        switch (clase) {
+            case 1:
+                result = (T) facadeObject.findByIdBusinessHeadquarter(id);
+                break;
+            case 2:
+                result = (T) facadeObject.findByIdbBusinessHeadquarterProvider(id);
+                break;
+            case 3:
+                result = (T) facadeObject.findByIdBusinessHeadquarterStock(id);
+                break;
+            case 4:
+                result = (T) facadeObject.findByIdCostumer(id);
+                break;
+            case 5:
+                result = (T) facadeObject.findByIdGeographicLocation(id);
+                break;
+            case 6:
+                result = (T) facadeObject.findByIdInvoiceMySQL(id);
+                break;
+            case 7:
+                result = (T) facadeObject.findByIdProductMySQL(id);
+                break;
+            case 8:
+                result = (T) facadeObject.findByIdProvider(id);
+                break;
+            case 9:
+                result = (T) facadeObject.findByIdStockInvoice(id);
+                break;
+            case 10:
+                result = (T) facadeObject.findByIdStockMySQL(id);
+                break;
+            default:
+                break;
         }
         return result;
     }
 
-    /*public List<> findAll() throws Exception {
-        return facadeObject.();
-    }*/
+    /*
+     * public List<> findAll() throws Exception { return facadeObject.(); }
+     */
 }

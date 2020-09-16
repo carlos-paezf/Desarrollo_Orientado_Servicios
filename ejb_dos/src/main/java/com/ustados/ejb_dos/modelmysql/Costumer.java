@@ -17,6 +17,7 @@ public class Costumer implements Serializable {
 	// ! Variable de la consulta
 	public static final String FIND_BY_ID = "Costumer.FIND_BY_ID";
 	public static final String FIND_ALL = "Costumer.FIND_ALL";
+	public static final String FIND_BY_DOCUMENT = "Costumer.FIND_BY_DOCUMENT";
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -40,6 +41,8 @@ public class Costumer implements Serializable {
 	private String phoneNumber;
 
 	private String surname;
+
+	private String document;
 
 	public Costumer() {
 	}
@@ -108,4 +111,11 @@ public class Costumer implements Serializable {
 		this.surname = surname;
 	}
 
+	public String getDocument(){
+		return this.document;
+	}
+
+	public void setDocument(String document){
+		this.document = document;
+	}
 }

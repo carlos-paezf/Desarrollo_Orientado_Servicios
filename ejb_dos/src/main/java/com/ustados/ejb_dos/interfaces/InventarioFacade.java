@@ -2,6 +2,8 @@ package com.ustados.ejb_dos.interfaces;
 
 import javax.ejb.Remote;
 
+import com.ustados.ejb_dos.emnus.MotorBdEnum;
+
 /**
  * interfaz encardad de crear los métodos comunes
  * @author David Ferrer
@@ -32,4 +34,11 @@ public interface InventarioFacade<T> {
 	 */
 	public void delete(T t) throws Exception;	
 
+	/**
+	 * Metodo para buscar una persona por su documento
+	 * @param document
+	 * @return
+	 * @throws Exception
+	 */
+	public T searchByDocument(String document, MotorBdEnum bdMotor) throws Exception;
 }

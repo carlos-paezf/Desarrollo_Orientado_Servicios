@@ -7,6 +7,8 @@ import java.util.List;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
 
+import com.ustados.ejb_dos.emnus.MotorBdEnum;
+import com.ustados.ejb_dos.modelpostgresql.Client;
 import com.ustados.ejb_dos.modelpostgresql.Supplier;
 import com.ustados.ejb_dos.modelpostgresql.Warehouse;
 import com.ustados.ejb_dos.services.InventarioServicePostgreSQL;
@@ -17,7 +19,7 @@ import com.ustados.ejb_dos.services.InventarioServicePostgreSQL;
 
 // ! Clase intermedia para el llamado de la capa logica y las capas del SOAP
 @Stateless
-public class FacadeServices<T> implements Serializable {
+public class FacadeServicesPostgreSQL<T> implements Serializable {
     @EJB
     InventarioServicePostgreSQL<T> inventarioServicePostgreSQL;
 
@@ -33,6 +35,21 @@ public class FacadeServices<T> implements Serializable {
             warehouses = null;
         }
         return warehouses;
+    }
+
+    /**
+     * 
+     * @param document
+     * @return
+     */
+    public Client searchClientDocument(String document){
+        Client client = new Client();
+        try {
+            client = (Client) inventarioServicePostgreSQL.searchByDocument(document, MotorBdEnum.POSTGRESQL);
+        } catch (Exception e) {
+            client = null;
+        }
+        return client;
     }
 
 }

@@ -8,6 +8,7 @@ import javax.ejb.Stateless;
 import javax.ejb.TransactionAttribute;
 import javax.ejb.TransactionAttributeType;
 
+import com.ustados.ejb_dos.emnus.MotorBdEnum;
 import com.ustados.ejb_dos.interfaces.IObjectFacadePostgreSQL;
 import com.ustados.ejb_dos.interfaces.InventarioFacade;
 import com.ustados.ejb_dos.modelpostgresql.*;
@@ -40,6 +41,10 @@ public class InventarioServicePostgreSQL<T> {
 
 	public void delete(T t) throws Exception {
 		inventarioFacade.delete(t);
+	}
+
+	public T searchByDocument(String document, MotorBdEnum bdMotor) throws Exception{
+		return inventarioFacade.searchByDocument(document, bdMotor);
 	}
 
 	public T findByID(T t) throws Exception {

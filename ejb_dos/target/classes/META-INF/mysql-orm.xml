@@ -84,4 +84,8 @@ xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence/orm http://xmlns.jcp
         <query>SELECT s FROM StockMySQL s </query>
     </named-query>
 
+    <named-query name="Costumer.FIND_BY_DOCUMENT">
+        <query>SELECT c FROM Costumer c WHERE c.document = :doc</query>
+    </named-query>
+
 </entity-mappings>
