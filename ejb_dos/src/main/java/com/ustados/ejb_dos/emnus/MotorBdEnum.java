@@ -8,7 +8,7 @@ public enum MotorBdEnum {
 
     public String bdName;
 
-    public MotorBdEnum(int idBD, String bdName) {
+    MotorBdEnum(int idBD, String bdName) {
         this.idBD = idBD;
         this.bdName = bdName;
     }

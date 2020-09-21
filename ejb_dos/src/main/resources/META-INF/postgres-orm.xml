@@ -69,7 +69,7 @@ xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence/orm http://xmlns.jcp
     </named-query>
 
     <named-query name="Client.FIND_BY_DOCUMENT">
-        <query>SELECT c FROM Client WHERE c.document = :doc</query>
+        <query>SELECT c FROM Client c WHERE c.document = :doc</query>
     </named-query>
 
 </entity-mappings>

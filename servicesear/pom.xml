@@ -47,5 +47,18 @@
             </plugin>
         </plugins>
     </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>ustados</groupId>
+            <artifactId>servicessoap</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>ustados</groupId>
+            <artifactId>ejb_dos</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
     
 </project>
