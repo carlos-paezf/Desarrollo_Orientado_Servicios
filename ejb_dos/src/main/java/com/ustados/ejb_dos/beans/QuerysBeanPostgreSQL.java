@@ -4,7 +4,7 @@ package com.ustados.ejb_dos.beans;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.ejb.Local;
+import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.ejb.TransactionManagement;
 import javax.ejb.TransactionManagementType;
@@ -13,11 +13,19 @@ import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
+import com.postgresql.model.City;
+import com.postgresql.model.Client;
+import com.postgresql.model.Department;
+import com.postgresql.model.Invoice;
+import com.postgresql.model.Product;
+import com.postgresql.model.Stock;
+import com.postgresql.model.Supplier;
+import com.postgresql.model.Warehouse;
 import com.ustados.ejb_dos.interfaces.IObjectFacadePostgreSQL;
 import com.ustados.ejb_dos.modelpostgresql.*;
 
 @Stateless	//Bean con estado
-@Local
+@LocalBean
 @TransactionManagement(TransactionManagementType.CONTAINER)
 public class QuerysBeanPostgreSQL implements IObjectFacadePostgreSQL {
 

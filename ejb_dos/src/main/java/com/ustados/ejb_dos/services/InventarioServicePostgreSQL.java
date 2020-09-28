@@ -8,6 +8,14 @@ import javax.ejb.Stateless;
 import javax.ejb.TransactionAttribute;
 import javax.ejb.TransactionAttributeType;
 
+import com.postgresql.model.City;
+import com.postgresql.model.Client;
+import com.postgresql.model.Department;
+import com.postgresql.model.Invoice;
+import com.postgresql.model.Product;
+import com.postgresql.model.Stock;
+import com.postgresql.model.Supplier;
+import com.postgresql.model.Warehouse;
 import com.ustados.ejb_dos.emnus.MotorBdEnum;
 import com.ustados.ejb_dos.interfaces.IObjectFacadePostgreSQL;
 import com.ustados.ejb_dos.interfaces.InventarioFacade;

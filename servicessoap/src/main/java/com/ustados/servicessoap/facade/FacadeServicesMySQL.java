@@ -4,8 +4,8 @@ import java.io.Serializable;
 
 import javax.ejb.EJB;
 
+import com.mysql.model.Costumer;
 import com.ustados.ejb_dos.emnus.MotorBdEnum;
-import com.ustados.ejb_dos.modelmysql.Costumer;
 import com.ustados.ejb_dos.services.InventarioServiceMySQL;
 
 public class FacadeServicesMySQL<T> implements Serializable{

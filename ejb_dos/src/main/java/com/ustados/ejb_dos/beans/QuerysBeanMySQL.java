@@ -2,18 +2,28 @@ package com.ustados.ejb_dos.beans;
 
 import java.util.List;
 
-import javax.ejb.Local;
+import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.ejb.TransactionManagement;
 import javax.ejb.TransactionManagementType;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import com.mysql.model.BusinessHeadquarter;
+import com.mysql.model.BusinessHeadquarterProvider;
+import com.mysql.model.BusinessHeadquarterStock;
+import com.mysql.model.Costumer;
+import com.mysql.model.GeographicLocation;
+import com.mysql.model.InvoiceMySQL;
+import com.mysql.model.ProductMySQL;
+import com.mysql.model.Provider;
+import com.mysql.model.StockInvoice;
+import com.mysql.model.StockMySQL;
 import com.ustados.ejb_dos.interfaces.IObjectFacadeMySQL;
 import com.ustados.ejb_dos.modelmysql.*;
 
 @Stateless // Bean con estado
-@Local
+@LocalBean
 @TransactionManagement(TransactionManagementType.CONTAINER)
 public class QuerysBeanMySQL implements IObjectFacadeMySQL {
 

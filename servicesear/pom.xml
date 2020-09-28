@@ -32,6 +32,7 @@
                     <version>6</version>
                     <defaultLibBundleDir>lib</defaultLibBundleDir>
 
+                    <!--Empaquetado de los proyectos-->
                     <modules>
                         <webModule>
                             <groupId>ustados</groupId>
@@ -45,9 +46,27 @@
 
                 </configuration>
             </plugin>
+
+            <!--Despligue en el servidor--> 
+            <plugin>
+                <groupId>org.wildfly.plugins</groupId>
+                <artifactId>wildfly-maven-plugin</artifactId>
+                <version>2.0.1.Final</version>
+                <executions>
+                    <execution>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>undeploy</goal>
+                            <goal>deploy</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
         </plugins>
     </build>
 
+    <!--Dependencias asociadas con el EAR-->
     <dependencies>
         <dependency>
             <groupId>ustados</groupId>

@@ -3,28 +3,18 @@
 	xmlns="http://xmlns.jcp.org/xml/ns/persistence"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
-	<persistence-unit name="ejb_dos">
+	<persistence-unit name="postgresql">
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
 		<jta-data-source>java:jboss/env/jdbc/inventariopostgres</jta-data-source>
 		<mapping-file>META-INF/postgres-orm.xml</mapping-file>
-		<class>com.ustados.ejb_dos.modelpostgresql.City</class>
-		<class>com.ustados.ejb_dos.modelpostgresql.Client</class>
-		<class>com.ustados.ejb_dos.modelpostgresql.Department</class>
-		<class>com.ustados.ejb_dos.modelpostgresql.Invoice</class>
-		<class>com.ustados.ejb_dos.modelpostgresql.Product</class>
-		<class>com.ustados.ejb_dos.modelpostgresql.Stock</class>
-		<class>com.ustados.ejb_dos.modelpostgresql.Supplier</class>
-		<class>com.ustados.ejb_dos.modelpostgresql.Warehouse</class>
-		<class>com.ustados.ejb_dos.modelmysql.BusinessHeadquarter</class>
-		<class>com.ustados.ejb_dos.modelmysql.BusinessHeadquarterProvider</class>
-		<class>com.ustados.ejb_dos.modelmysql.BusinessHeadquarterStock</class>
-		<class>com.ustados.ejb_dos.modelmysql.Costumer</class>
-		<class>com.ustados.ejb_dos.modelmysql.GeographicLocation</class>
-		<class>com.ustados.ejb_dos.modelmysql.InvoiceMySQL</class>
-		<class>com.ustados.ejb_dos.modelmysql.ProductMySQL</class>
-		<class>com.ustados.ejb_dos.modelmysql.Provider</class>
-		<class>com.ustados.ejb_dos.modelmysql.StockMySQL</class>
-		<class>com.ustados.ejb_dos.modelmysql.StockInvoice</class>
+		<class>com.postgresql.model.City</class>
+		<class>com.postgresql.model.Client</class>
+		<class>com.postgresql.model.Department</class>
+		<class>com.postgresql.model.Invoice</class>
+		<class>com.postgresql.model.Product</class>
+		<class>com.postgresql.model.Stock</class>
+		<class>com.postgresql.model.Supplier</class>
+		<class>com.postgresql.model.Warehouse</class>
 		<exclude-unlisted-classes>true</exclude-unlisted-classes>
 		<shared-cache-mode>ENABLE_SELECTIVE</shared-cache-mode>
 		<properties>
@@ -34,20 +24,22 @@
 				value="org.hibernate.dialect.PostgresSQL82Dialect" />
 		</properties>
 	</persistence-unit>
-	<persistence-unit name="ejb_dos_mysql">
+	
+
+	<persistence-unit name="mysql">
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
 		<jta-data-source>java:jboss/env/jdbc/inventariomysql</jta-data-source>
 		<mapping-file>META-INF/mysql-orm.xml</mapping-file>
-		<class>com.ustados.ejb.modelMysql.BusinessHeadquarter</class>
-		<class>com.ustados.ejb.modelMysql.BusinessHeadquarterProvider</class>
-		<class>com.ustados.ejb.modelMysql.BusinessHeadquarterStock</class>
-		<class>com.ustados.ejb.modelMysql.Costumer</class>
-		<class>com.ustados.ejb.modelMysql.GeographicLocation</class>
-		<class>com.ustados.ejb.modelMysql.InvoiceMysq</class>
-		<class>com.ustados.ejb.modelMysql.ProductMysql</class>
-		<class>com.ustados.ejb.modelMysql.Provider</class>
-		<class>com.ustados.ejb.modelMysql.StockMysql</class>
-		<class>com.ustados.ejb.modelMysql.StockInvoice</class>
+		<class>com.mysql.model.BusinessHeadquarter</class>
+		<class>com.mysql.model.BusinessHeadquarterProvider</class>
+		<class>com.mysql.model.BusinessHeadquarterStock</class>
+		<class>com.mysql.model.Costumer</class>
+		<class>com.mysql.model.GeographicLocation</class>
+		<class>com.mysql.model.InvoiceMySQL</class>
+		<class>com.mysql.model.ProductMySQL</class>
+		<class>com.mysql.model.Provider</class>
+		<class>com.mysql.model.StockMySQL</class>
+		<class>com.mysql.model.StockInvoice</class>
 		<exclude-unlisted-classes>true</exclude-unlisted-classes>
 		<shared-cache-mode>ENABLE_SELECTIVE</shared-cache-mode>
 		<properties>
@@ -59,5 +51,6 @@
 				value="true" />
 		</properties>
 	</persistence-unit>
+
 </persistence>
 

@@ -4,16 +4,16 @@ import java.util.List;
 
 import javax.ejb.Remote;
 
-import com.ustados.ejb_dos.modelmysql.BusinessHeadquarter;
-import com.ustados.ejb_dos.modelmysql.BusinessHeadquarterProvider;
-import com.ustados.ejb_dos.modelmysql.BusinessHeadquarterStock;
-import com.ustados.ejb_dos.modelmysql.Costumer;
-import com.ustados.ejb_dos.modelmysql.GeographicLocation;
-import com.ustados.ejb_dos.modelmysql.InvoiceMySQL;
-import com.ustados.ejb_dos.modelmysql.ProductMySQL;
-import com.ustados.ejb_dos.modelmysql.Provider;
-import com.ustados.ejb_dos.modelmysql.StockInvoice;
-import com.ustados.ejb_dos.modelmysql.StockMySQL;
+import com.mysql.model.BusinessHeadquarter;
+import com.mysql.model.BusinessHeadquarterProvider;
+import com.mysql.model.BusinessHeadquarterStock;
+import com.mysql.model.Costumer;
+import com.mysql.model.GeographicLocation;
+import com.mysql.model.InvoiceMySQL;
+import com.mysql.model.ProductMySQL;
+import com.mysql.model.Provider;
+import com.mysql.model.StockInvoice;
+import com.mysql.model.StockMySQL;
 
 
 @Remote

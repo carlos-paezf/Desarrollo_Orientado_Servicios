@@ -7,7 +7,7 @@ import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebService;
 
-import com.ustados.ejb_dos.modelmysql.Costumer;
+import com.mysql.model.Costumer;
 import com.ustados.ejb_dos.services.InventarioServiceMySQL;
 import com.ustados.servicessoap.facade.FacadeServicesMySQL;
 

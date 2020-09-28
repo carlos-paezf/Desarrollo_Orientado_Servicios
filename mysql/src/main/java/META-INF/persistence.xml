@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+	<persistence-unit name="mysql">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<jta-data-source>java:jboss/env/jdbc/inventariomysql</jta-data-source>
+			<class>com.mysql.model.BusinessHeadquarter</class>
+			<class>com.mysql.model.BusinessHeadquarterProvider</class>
+			<class>com.mysql.model.BusinessHeadquarterStock</class>
+			<class>com.mysql.model.Costumer</class>
+			<class>com.mysql.model.GeographicLocation</class>
+			<class>com.mysql.model.InvoiceMySQL</class>
+			<class>com.mysql.model.ProductMySQL</class>
+			<class>com.mysql.model.Provider</class>
+			<class>com.mysql.model.StockMySQL</class>
+			<class>com.mysql.model.StockInvoice</class>
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
+		<shared-cache-mode>ENABLE_SELECTIVE</shared-cache-mode>
+		<properties>
+			<property name="hibernate.connection.driver_class"
+				value="net.sourceforge.jtds.jdbc.Driver" />
+			<property name="hibernate.dialect"
+				value="org.hibernate.dialect.MySQLDialect" />
+		</properties>
+	</persistence-unit>
+</persistence>

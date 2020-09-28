@@ -12,8 +12,8 @@ import javax.jws.WebService;
 
 import org.apache.poi.ss.formula.functions.T;
 
-import com.ustados.ejb_dos.modelpostgresql.Client;
-import com.ustados.ejb_dos.modelpostgresql.Warehouse;
+import com.postgresql.model.Client;
+import com.postgresql.model.Warehouse;
 import com.ustados.servicessoap.facade.FacadeServicesPostgreSQL;
 
 /**

@@ -4,14 +4,14 @@ import java.util.List;
 
 import javax.ejb.Remote;
 
-import com.ustados.ejb_dos.modelpostgresql.City;
-import com.ustados.ejb_dos.modelpostgresql.Client;
-import com.ustados.ejb_dos.modelpostgresql.Department;
-import com.ustados.ejb_dos.modelpostgresql.Invoice;
-import com.ustados.ejb_dos.modelpostgresql.Product;
-import com.ustados.ejb_dos.modelpostgresql.Stock;
-import com.ustados.ejb_dos.modelpostgresql.Supplier;
-import com.ustados.ejb_dos.modelpostgresql.Warehouse;
+import com.postgresql.model.City;
+import com.postgresql.model.Client;
+import com.postgresql.model.Department;
+import com.postgresql.model.Invoice;
+import com.postgresql.model.Product;
+import com.postgresql.model.Stock;
+import com.postgresql.model.Supplier;
+import com.postgresql.model.Warehouse;
 
 @Remote
 public interface IObjectFacadePostgreSQL {

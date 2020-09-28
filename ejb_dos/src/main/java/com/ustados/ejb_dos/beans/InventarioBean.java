@@ -3,7 +3,7 @@ package com.ustados.ejb_dos.beans;
 
 import java.util.List;
 
-import javax.ejb.Local;
+import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.ejb.TransactionManagement;
 import javax.ejb.TransactionManagementType;
@@ -11,13 +11,13 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
+import com.mysql.model.Costumer;
+import com.postgresql.model.Client;
 import com.ustados.ejb_dos.emnus.MotorBdEnum;
 import com.ustados.ejb_dos.interfaces.InventarioFacade;
-import com.ustados.ejb_dos.modelmysql.Costumer;
-import com.ustados.ejb_dos.modelpostgresql.Client;
 
 @Stateless	//Bean con estado
-@Local
+@LocalBean
 @TransactionManagement(TransactionManagementType.CONTAINER)
 public class InventarioBean<T> implements InventarioFacade<T>{
 
