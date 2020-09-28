@@ -1,4 +1,4 @@
-package com.ustados.ejb_dos.emnus;
+package com.ustados.ejb_dos.enums;
 
 public enum ObjectConstants {
 

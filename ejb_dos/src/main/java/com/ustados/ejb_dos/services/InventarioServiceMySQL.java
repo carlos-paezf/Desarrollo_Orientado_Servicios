@@ -6,7 +6,7 @@ import javax.ejb.Stateless;
 import javax.ejb.TransactionAttribute;
 import javax.ejb.TransactionAttributeType;
 
-import com.ustados.ejb_dos.emnus.MotorBdEnum;
+import com.ustados.ejb_dos.enums.MotorBdEnum;
 import com.ustados.ejb_dos.interfaces.IObjectFacadeMySQL;
 import com.ustados.ejb_dos.interfaces.InventarioFacade;
 
