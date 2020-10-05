@@ -19,7 +19,6 @@ import com.postgresql.model.Warehouse;
 import com.ustados.ejb_dos.enums.MotorBdEnum;
 import com.ustados.ejb_dos.interfaces.IObjectFacadePostgreSQL;
 import com.ustados.ejb_dos.interfaces.InventarioFacade;
-import com.ustados.ejb_dos.modelpostgresql.*;
 
 /* 
  * 

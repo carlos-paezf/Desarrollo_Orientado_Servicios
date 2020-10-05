@@ -8,9 +8,8 @@ import javax.ejb.EJB;
 import javax.ejb.Stateless;
 
 import com.postgresql.model.Client;
-import com.postgresql.model.Supplier;
 import com.postgresql.model.Warehouse;
-import com.ustados.ejb_dos.emnus.MotorBdEnum;
+import com.ustados.ejb_dos.enums.MotorBdEnum;
 import com.ustados.ejb_dos.services.InventarioServicePostgreSQL;
 
 /**

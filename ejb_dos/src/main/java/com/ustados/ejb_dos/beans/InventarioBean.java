@@ -13,7 +13,7 @@ import javax.persistence.Query;
 
 import com.mysql.model.Costumer;
 import com.postgresql.model.Client;
-import com.ustados.ejb_dos.emnus.MotorBdEnum;
+import com.ustados.ejb_dos.enums.MotorBdEnum;
 import com.ustados.ejb_dos.interfaces.InventarioFacade;
 
 @Stateless	//Bean con estado

@@ -22,8 +22,6 @@ import com.postgresql.model.Stock;
 import com.postgresql.model.Supplier;
 import com.postgresql.model.Warehouse;
 import com.ustados.ejb_dos.interfaces.IObjectFacadePostgreSQL;
-import com.ustados.ejb_dos.modelpostgresql.*;
-
 @Stateless	//Bean con estado
 @LocalBean
 @TransactionManagement(TransactionManagementType.CONTAINER)

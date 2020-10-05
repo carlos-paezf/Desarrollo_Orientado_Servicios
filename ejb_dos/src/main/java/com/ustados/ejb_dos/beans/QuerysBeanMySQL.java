@@ -20,7 +20,6 @@ import com.mysql.model.Provider;
 import com.mysql.model.StockInvoice;
 import com.mysql.model.StockMySQL;
 import com.ustados.ejb_dos.interfaces.IObjectFacadeMySQL;
-import com.ustados.ejb_dos.modelmysql.*;
 
 @Stateless // Bean con estado
 @LocalBean

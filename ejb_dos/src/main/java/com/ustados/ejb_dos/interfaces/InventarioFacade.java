@@ -2,7 +2,7 @@ package com.ustados.ejb_dos.interfaces;
 
 import javax.ejb.Remote;
 
-import com.ustados.ejb_dos.emnus.MotorBdEnum;
+import com.ustados.ejb_dos.enums.MotorBdEnum;
 
 /**
  * interfaz encardad de crear los métodos comunes

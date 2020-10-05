@@ -42,6 +42,14 @@
                             <groupId>ustados</groupId>
                             <artifactId>ejb_dos</artifactId>
                         </ejbModule>
+                        <jarModule>
+                            <groupId>ustados</groupId>
+                            <artifactId>postgresql</artifactId>
+                        </jarModule>
+                        <jarModule>
+                            <groupId>ustados</groupId>
+                            <artifactId>mysql</artifactId>
+                        </jarModule>
                     </modules>
 
                 </configuration>
@@ -72,12 +80,27 @@
             <groupId>ustados</groupId>
             <artifactId>servicessoap</artifactId>
             <version>0.0.1-SNAPSHOT</version>
+            <type>war</type>
         </dependency>
         <dependency>
             <groupId>ustados</groupId>
             <artifactId>ejb_dos</artifactId>
             <version>0.0.1-SNAPSHOT</version>
+            <type>ejb</type>
         </dependency>
+        <dependency>
+			<groupId>ustados</groupId>
+			<artifactId>mysql</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<type>jar</type>
+		</dependency>
+		<dependency>
+			<groupId>ustados</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<type>jar</type>
+		</dependency>
     </dependencies>
+    
     
 </project>
