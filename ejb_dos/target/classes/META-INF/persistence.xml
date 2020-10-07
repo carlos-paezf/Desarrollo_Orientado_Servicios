@@ -28,7 +28,7 @@
 
 	<persistence-unit name="mysql">
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
-		<jta-data-source>java:jboss/env/jdbc/inventariomysql</jta-data-source>
+		<jta-data-source>java:jboss/env/jdbc/inventariosql</jta-data-source>
 		<mapping-file>META-INF/mysql-orm.xml</mapping-file>
 		<class>com.mysql.model.BusinessHeadquarter</class>
 		<class>com.mysql.model.BusinessHeadquarterProvider</class>

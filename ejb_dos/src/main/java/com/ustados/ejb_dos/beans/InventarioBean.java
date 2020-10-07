@@ -28,7 +28,7 @@ public class InventarioBean<T> implements InventarioFacade<T>{
     //Contiene la logica de los metdos para realizar las transacciones con la BBDD y administracion de consultas
     private EntityManager entityManagerPostgreSQL;
 
-	@PersistenceContext(name = "ejb_dos_mysql")
+	@PersistenceContext(unitName = "ejb_dos_mysql")
 	private EntityManager entityManagerMySQL;
 
 	@java.lang.Override
