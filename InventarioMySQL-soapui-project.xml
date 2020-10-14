@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="2fe637f9-1021-48e3-9a4a-8deeeaeeebf3" activeEnvironment="Default" name="InventarioMySQL" soapui-version="5.6.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="18e075ee-d83d-4e5b-91a1-70217f43790b" wsaVersion="NONE" name="InvenarioMsqlUstaServiceSoapBinding" type="wsdl" bindingName="{http://services.servicessoap.ustados.com/}InvenarioMsqlUstaServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:8081/servicessoap/ustainvetario?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8081/servicessoap/ustainvetario?wsdl"><con:part><con:url>http://localhost:8081/servicessoap/ustainvetario?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="InvenarioMsqlUstaService" targetNamespace="http://services.servicessoap.ustados.com/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://services.servicessoap.ustados.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http">
+  <wsdl:types>
+    <xs:schema elementFormDefault="unqualified" targetNamespace="http://services.servicessoap.ustados.com/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="clientByDocument" type="tns:clientByDocument"/>
+      <xs:element name="clientByDocumentResponse" type="tns:clientByDocumentResponse"/>
+      <xs:complexType name="clientByDocument">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="document" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="clientByDocumentResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:costumer"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="costumer">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="dateOfBirth" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="document" type="xs:string"/>
+          <xs:element minOccurs="0" name="email" type="xs:string"/>
+          <xs:element minOccurs="0" name="gender" type="xs:string"/>
+          <xs:element name="idCostumer" type="xs:int"/>
+          <xs:element name="idGeographicLocation" type="xs:int"/>
+          <xs:element minOccurs="0" name="name" type="xs:string"/>
+          <xs:element minOccurs="0" name="phoneNumber" type="xs:string"/>
+          <xs:element minOccurs="0" name="surname" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="clientByDocumentResponse">
+    <wsdl:part element="tns:clientByDocumentResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="clientByDocument">
+    <wsdl:part element="tns:clientByDocument" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="ustainvetario">
+    <wsdl:operation name="clientByDocument">
+      <wsdl:input message="tns:clientByDocument" name="clientByDocument"></wsdl:input>
+      <wsdl:output message="tns:clientByDocumentResponse" name="clientByDocumentResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="InvenarioMsqlUstaServiceSoapBinding" type="tns:ustainvetario">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="clientByDocument">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="clientByDocument">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="clientByDocumentResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="InvenarioMsqlUstaService">
+    <wsdl:port binding="tns:InvenarioMsqlUstaServiceSoapBinding" name="ustainvetarioPort">
+      <soap:address location="http://localhost:8081/servicessoap/ustainvetario"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8081/servicessoap/ustainvetario</con:endpoint></con:endpoints><con:operation id="ccfe2525-ce12-4173-86fc-978122188d17" isOneWay="false" action="" name="clientByDocument" bindingOperationName="clientByDocument" type="Request-Response" outputName="clientByDocumentResponse" inputName="clientByDocument" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="0543674d-d10c-4d05-a073-b266b52f643d" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8081/servicessoap/ustainvetario</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://services.servicessoap.ustados.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:clientByDocument>\r
+         <!--Optional:-->\r
+         <document>1</document>\r
+      </ser:clientByDocument>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://services.servicessoap.ustados.com/ustainvetario/clientByDocument"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

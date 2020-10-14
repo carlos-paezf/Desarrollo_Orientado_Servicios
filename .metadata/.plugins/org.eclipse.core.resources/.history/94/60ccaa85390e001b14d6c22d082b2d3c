@@ -1,0 +1,45 @@
+package com.ustados.servicessoap.services;
+
+import java.io.Serializable;
+
+import javax.ejb.EJB;
+import javax.ejb.Stateless;
+import javax.jws.WebMethod;
+import javax.jws.WebParam;
+import javax.jws.WebService;
+
+import org.apache.poi.ss.formula.functions.T;
+
+import com.mysql.model.Costumer;
+import com.usta.servicesiao.facade.FacadeServiceMysql;
+import com.ustados.ejb_dos.services.InventadioServicesMysql;
+
+
+@WebService(name = "ustainvetario")
+@Stateless
+public class InvenarioMsqlUsta implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	@EJB
+	FacadeServiceMysql<T> mysq;
+	
+	
+	@WebMethod(operationName = "clientByDocument")
+	public Costumer searchClientByDocument(
+			@WebParam(name = "document") String document) {
+		
+		Costumer costumer = new Costumer();
+		
+		costumer = mysq.searchCostumerDocument(document);
+		
+		return costumer;
+	}
+	
+	
+	
+
+}

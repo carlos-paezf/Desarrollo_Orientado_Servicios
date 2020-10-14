@@ -1,0 +1,127 @@
+INSERT INTO department VALUES
+    	(1,'Antioquia'),
+	(2,'Atlantico'),
+	(3,'D. C. Santa Fe de Bogotá'),
+	(4,'Bolivar'),
+	(5,'Boyaca'),
+	(6,'Caldas'),
+	(7,'Caqueta'),
+	(8,'Cauca'),
+	(9,'Cesar'),
+	(10,'Cordova'),
+	(11,'Cundinamarca'),
+	(12,'Choco'),
+	(13,'Huila'),
+	(14,'La Guajira'),
+	(15,'Magdalena'),
+	(16,'Meta'),
+	(17,'Nariño'),
+	(18,'Norte de Santander'),
+	(19,'Quindio'),
+	(20,'Risaralda'),
+	(21,'Santander'),
+	(22,'Sucre'),
+	(23,'Tolima'),
+	(24,'Valle'),
+	(25,'Arauca'),
+	(26,'Casanare'),
+	(27,'Putumayo'),
+	(28,'San Andres'),
+	(29,'Amazonas'),
+	(30,'Guainia'),
+	(31,'Guaviare'),
+	(32,'Vaupes'),
+	(33,'Vichada');
+
+INSERT INTO city VALUES
+    (1,21,'Suaita'),
+    (2,5,'Tunja'),
+    (3,1,'Medellin'),
+    (4,8,'Popayan'),
+    (5,6,'Manizales'),
+    (6,7,'Florencia'),
+    (7,26,'Yopal'),
+    (8,9,'Valledupar'),
+    (9,29,'Leticia'),
+    (10,25,'Arauca'),
+    (11,2,'Barranquilla'),
+    (12,4,'Cartagena'),
+    (13,12,'Quibdo'),
+    (14,10,'Monteria'),
+    (15,11,'Bogota'),
+    (16,13,'Neiva'),
+    (17,19,'Armenia'),
+    (18,20,'Pereira'),
+    (19,24,'Cali'),
+    (20,23,'Ibague');
+
+
+INSERT INTO warehouse VALUES
+    (1,1,'Barrio Sotomayor','Pepito',23),
+    (2,2,'Central','Mate',24),
+    (3,3,'Granizal','Pablo',46),
+    (4,4,'El Diamante','Sonia',26),
+    (5,5,'Chipre','Juana',15),
+    (6,6,'San Lorenzo','Juanes',30),
+    (7,7,'El fical','Alberto',33),
+    (8,8,'Altagracia','Sebastian',21),
+    (9,9,'Muiscas','Jorge',20),
+    (10,10,'San Jorge','Santiago',35);
+
+INSERT INTO supplier VALUES
+    (1,'EMP','Juanes',123123),
+    (2,'ACD','Juana',345345),
+    (3,'MQ','Monica',678876),
+    (4,'BSK','Alonso',156712),
+    (5,'BTA','Alvaro',366742),
+    (6,'AST','Morata',156776),
+    (7,'ART','Janet',12334),
+    (8,'BBK','Lucas',1523772),
+    (9,'JDK','Luis',142131),
+    (10,'BBC','Fabian',1251272);
+
+INSERT INTO product VALUES
+    (1,'Libro','Principito'),
+    (2,'Celular','AT&T'),
+    (3,'Audifonos','inalambricos'),
+    (4,'Reloj','Tommy Hilfiger' ),
+    (5,'Cubo Rubik','Cubo 3x3'),
+    (6,'Cubo Rubik','Cubo 5x5'),
+    (7,'Teclado','HP'),
+    (8,'PC','Lenovo'),
+    (9,'Celular','iphone'),
+    (10,'Portatil','ASUS');
+
+INSERT INTO stock VALUES
+    (1,1,22,1456,1,1),
+    (2,2,33,134, 1,1),
+    (3,3,44,1345,1,1),
+    (4,4,20,255,1,1),
+    (5,5,25,2000,1,1),
+    (6,6,25,299,1,1),
+    (7,7,33,199,1,1),
+    (8,8,20,200,1,1),
+    (9,9,50,349,1,1),
+    (10,2,20,549,1,1);
+
+INSERT INTO client VALUES
+    (1,'2000-02-01','Pepo',1234556,1231231,'adasdas@adasdas','M'),
+    (2,'2000-02-02','Pepa',7891011,3456543,'pepa@pepa','F'),
+    (3,'2000-02-05','Mauricio',89101123,5673231,'Mauricio@Mauricio','M'),
+    (4,'2000-02-07','Pati',3244686,9123434,'Pati@Pati','F'),
+    (5,'2000-02-07','Pepito',4244686,6423434,'Pepito@Pepito','M'),
+    (6,'2000-02-07','Mou',3240986,1723434,'Mou@Mou','M'),
+    (7,'2000-02-07','David',1244686,8343434,'David@David','M'),
+    (8,'2000-02-07','Andrea',4544686,5613434,'Andrea@Andrea','F'),
+    (9,'2000-02-09','carlos',412516,526132,'carlitos@hotmail','M'),
+    (10,'2000-05-03','federico',152316,32159,'feder@gmail','M');
+
+INSERT INTO invoice VALUES
+    (1,'2000-02-03 05:22:22.222', 2, 123, 1, 1),
+    (2,'2000-02-02 06:22:22.222', 8, 200, 1, 1),
+    (3,'2000-02-01 08:20:22.222', 5, 300, 1, 1),
+    (4,'2000-02-08 10:23:22.222', 1, 499, 1, 1),
+    (5,'2000-02-04 10:23:22.222', 2, 500, 1, 1),
+    (6,'2000-02-08 10:23:22.222', 7, 299, 1, 1),
+    (7,'2000-02-10 10:23:22.222', 9, 125, 1, 1),
+    (8,'2000-02-11 10:22:22.222', 9, 123, 1, 1);

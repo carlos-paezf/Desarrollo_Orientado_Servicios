@@ -1,8 +1,10 @@
 package com.ustados.ejb_dos.beans;
 
 
+
 import java.util.List;
 
+import javax.ejb.Local;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.ejb.TransactionManagement;
@@ -12,72 +14,84 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 import com.mysql.model.Costumer;
-import com.postgresql.model.Client;
-import com.ustados.ejb_dos.enums.MotorBdEnum;
+import com.postgres.model.Client;
+import com.usta.ejb_dos.enums.MotorBdEnum;
 import com.ustados.ejb_dos.interfaces.InventarioFacade;
 
-@Stateless	//Bean con estado
+/**
+ * clase tipo bean que se encarga de las transacciones
+ * de tipo logico con la base de datos
+ * @author edgarmedina
+ *
+ * @param <T>
+ */
+@Stateless //Bean con estado, estara atento a las peticiones
 @LocalBean
-@TransactionManagement(TransactionManagementType.CONTAINER)
+@TransactionManagement(TransactionManagementType.CONTAINER)//indica que las transacciones
+//las administra el servidor
 public class InventarioBean<T> implements InventarioFacade<T>{
 
-    //Define la unidad de persistenciaa que nos vamos a conectar
-    //Cual es la base de datos que estamos usando
-    @PersistenceContext(unitName = "ejb_dos")
-
-    //Contiene la logica de los metdos para realizar las transacciones con la BBDD y administracion de consultas
-    private EntityManager entityManagerPostgreSQL;
-
-	@PersistenceContext(unitName = "ejb_dos_mysql")
-	private EntityManager entityManagerMySQL;
-
-	@java.lang.Override
+	//defininon la unidad de persistencia la que nos vamos a 
+	//conectar (Cual es la base de datos que estamos usando) 
+	@PersistenceContext(unitName = "postgresEjb")
+	//contiene la logica de los metodos para realizar las transacciones
+	//con la base de datos y adminstración de consultas
+	private EntityManager entyMan;
+	
+	
+	
+	@PersistenceContext(unitName =  "mysqlEjb")
+	private EntityManager entyMysql;
+	
+	@Override
 	public void create(T t) throws Exception {
-		entityManagerPostgreSQL.persist(t);
-		
+		entyMan.persist(t);		
 	}
 
-	@java.lang.Override
+	@Override
 	public T update(T t) throws Exception {
-		return entityManagerPostgreSQL.merge(t);
+		return entyMan.merge(t);
 	}
 
-	@java.lang.Override
+	@Override
 	public void delete(T t) throws Exception {
-		entityManagerPostgreSQL.remove(t);	
+		entyMan.remove(t);
 	}
 
 	@Override
 	public T searchByDocument(String document, MotorBdEnum bdMotor) throws Exception {
 		T t = null;
+		
 		Query query = null;
+				
 		switch (bdMotor) {
 			case POSTGRESQL:
-				query = entityManagerPostgreSQL.createNamedQuery(Client.FIND_BY_DOCUMENT).setParameter("doc", document);
+				query = entyMan.createNamedQuery(Client.FIND_BY_DOCUMENT).setParameter("doc", document);
+				
 				List<Client> c = query.getResultList();
-				if(!c.isEmpty()){
-					for (Client cl : c){
+				
+				if(!c.isEmpty()) {
+					for(Client cl : c) {
+						t = (T) cl;
+						break;
+					}
+				}
+			break;
+			case MYSQL:
+				query = entyMysql.createNamedQuery(Costumer.FIND_BY_DOCUMENT).setParameter("doc", document);
+				
+				List<Costumer> co = query.getResultList();
+				
+				if(!co.isEmpty()) {
+					for(Costumer cl : co) {
 						t = (T) cl;
 						break;
 					}
 				}
 				break;
-			case MYSQL:
-				query = entityManagerMySQL.createNamedQuery(Costumer.FIND_BY_DOCUMENT).setParameter("doc", document);
-				List<Costumer> cr = query.getResultList();
-				if(!cr.isEmpty()){
-					for(Costumer cs : cr){
-						t = (T) cs;
-						break;
-					}
-				}
-				break;
-			
-			default:
-				break;
 		}
+		
 		return t;
 	}
-
 
 }

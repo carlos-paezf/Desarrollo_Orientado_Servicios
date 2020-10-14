@@ -1,7 +1,0 @@
-2020-08-05 11:47:04,456 INFO  [org.jboss.as.server.deployment.scanner] (MSC service thread 1-5) WFLYDS0013: Started FileSystemDeploymentService for directory C:\Servers\wildfly-20.0.1.Final\standalone\deployments
-2020-08-05 11:47:05,409 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) WFLYUT0006: Undertow HTTPS listener https listening on 127.0.0.1:8443
-2020-08-05 11:47:07,187 INFO  [org.jboss.ws.common.management] (MSC service thread 1-4) JBWS022052: Starting JBossWS 5.4.1.Final (Apache CXF 3.3.6) 
-2020-08-05 11:47:07,762 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0212: Resuming server
-2020-08-05 11:47:07,770 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0025: WildFly Full 20.0.1.Final (WildFly Core 12.0.3.Final) started in 52656ms - Started 314 of 580 services (370 services are lazy, passive or on-demand)
-2020-08-05 11:47:07,777 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0060: Http management interface listening on http://127.0.0.1:9990/management
-2020-08-05 11:47:07,779 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0051: Admin console listening on http://127.0.0.1:9990

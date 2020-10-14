@@ -9,62 +9,181 @@ import com.mysql.model.BusinessHeadquarterProvider;
 import com.mysql.model.BusinessHeadquarterStock;
 import com.mysql.model.Costumer;
 import com.mysql.model.GeographicLocation;
-import com.mysql.model.InvoiceMySQL;
-import com.mysql.model.ProductMySQL;
+import com.mysql.model.InvoiceMysq;
+import com.mysql.model.ProductMysql;
 import com.mysql.model.Provider;
 import com.mysql.model.StockInvoice;
-import com.mysql.model.StockMySQL;
+import com.mysql.model.StockMysql;
 
 
 @Remote
-public interface IObjectFacadeMySQL {
+public interface IObjectFacadeMysql {
 
-    public GeographicLocation findByIdGeographicLocation(int id) throws Exception;
-
-    public List<GeographicLocation> findAllGeographicLocations() throws Exception;
-
-    public BusinessHeadquarter findByIdBusinessHeadquarter(int id) throws Exception;
-
-    public List<BusinessHeadquarter> findAllBusinessHeadquarters() throws Exception;
-
-    public BusinessHeadquarterProvider findByIdbBusinessHeadquarterProvider(int id) throws Exception;
-
-    public List<BusinessHeadquarterProvider> findAllBusinessHeadquarterProviders() throws Exception;
-
-    public BusinessHeadquarterStock findByIdBusinessHeadquarterStock(int id) throws Exception;
-    
-    public List<BusinessHeadquarterStock> findAllBusinessHeadquarterStocks() throws Exception;
-    
-    public Costumer findByIdCostumer(int id) throws Exception;
-
-    public List<Costumer> findAllCostumers() throws Exception;
-
-    public InvoiceMySQL findByIdInvoiceMySQL(int id) throws Exception;
-
-    public List<InvoiceMySQL> findAllInvoiceMySQLs() throws Exception;
-
-    public ProductMySQL findByIdProductMySQL(int id) throws Exception;
-
-    public List<ProductMySQL> findAllProductMySQLs() throws Exception;
-
-    public Provider findByIdProvider(int id) throws Exception;
-
-    public List<Provider> findAllProviders() throws Exception;
-
-    public StockInvoice findByIdStockInvoice(int id) throws Exception;
-
-    public List<StockInvoice> findAllStockInvoices() throws Exception;
-
-    public StockMySQL findByIdStockMySQL(int id) throws Exception;
-
-    public List<StockMySQL> findAllStockMySQLs() throws Exception;
-
-    /**
-     * Busca las _________ según el _______
-     * 
-     * @param id
-     * @return
-     * @throws Exception
-     */
-    //public List<> findById(int id) throws Exception;
+	/**
+	 * 
+	 * @param id
+	 * @return
+	 * @throws Exception
+	 */
+	public BusinessHeadquarter findByIdBusinessHeadquarter(int id) throws Exception;
+	
+	/**
+	 * 
+	 * @return
+	 * @throws Exception
+	 */
+	public List<BusinessHeadquarter> findAllBusinessHeadquarter() throws Exception;
+	
+	/**
+	 * 
+	 * @param id
+	 * @return
+	 * @throws Exception
+	 */
+	public BusinessHeadquarterProvider findByIdBusinessHeadquarterProvider(int id) throws Exception;
+	
+	/**
+	 * 
+	 * @return
+	 * @throws Exception
+	 */
+	public List<BusinessHeadquarterProvider> findAllBusinessHeadquarterProvider() throws Exception;
+	
+	
+	/**
+	 * 
+	 * @param id
+	 * @return
+	 * @throws Exception
+	 */
+	public BusinessHeadquarterStock findByIdBusinessHeadquarterStock(int id) throws Exception;
+	
+	/**
+	 * 
+	 * @return
+	 * @throws Exception
+	 */
+	public List<BusinessHeadquarterStock> findAllBusinessHeadquarterStock() throws Exception;
+	
+	/**
+	 * 
+	 * @param id
+	 * @return
+	 * @throws Exception
+	 */
+	public Costumer findByIdInvoice(int id) throws Exception;
+	
+	/**
+	 * 
+	 * @return
+	 * @throws Exception
+	 */
+	public List<Costumer> findAllInvoices() throws Exception;
+	
+	/**
+	 * 
+	 * @param id
+	 * @return
+	 * @throws Exception
+	 */
+	public GeographicLocation findByIdGeographicLocation(int id) throws Exception;
+	
+	/**
+	 * 
+	 * @return
+	 * @throws Exception
+	 */
+	public List<GeographicLocation> findAlGeographicLocation() throws Exception;
+	
+	/**
+	 * 
+	 * @param id
+	 * @return
+	 * @throws Exception
+	 */
+	public InvoiceMysq findByIdInvoiceMysq(int id) throws Exception;
+	
+	/**
+	 * 
+	 * @return
+	 * @throws Exception
+	 */
+	public List<InvoiceMysq> findAllInvoiceMysq() throws Exception;
+	
+	/**
+	 * 
+	 * @param id
+	 * @return
+	 * @throws Exception
+	 */
+	public ProductMysql findByIdProductMysql(int id) throws Exception;
+	
+	/**
+	 * 
+	 * @return
+	 * @throws Exception
+	 */
+	public List<ProductMysql> findAllProductMysql() throws Exception;
+	
+	/**
+	 * 
+	 * @param id
+	 * @return
+	 * @throws Exception
+	 */
+	public Provider findByIdProvider(int id) throws Exception;
+	
+	/**
+	 * 
+	 * @return
+	 * @throws Exception
+	 */
+	public List<Provider> findAlProvider() throws Exception;
+	
+	/**
+	 * 
+	 * @param id
+	 * @return
+	 * @throws Exception
+	 */
+	public StockInvoice findByIDStockInvoice(int id) throws Exception;
+	
+	/**
+	 * 
+	 * @return
+	 * @throws Exception
+	 */
+	public List<StockInvoice> findBySupplierId() throws Exception;
+	
+	/**
+	 * 
+	 * @param id
+	 * @return
+	 * @throws Exception
+	 */
+	public StockMysql findByIDStockMysql(int id) throws Exception;
+	
+	/**
+	 * 
+	 * @return
+	 * @throws Exception
+	 */
+	public List<StockMysql> findByStockMysql() throws Exception;
+	
+	/**
+	 * 
+	 * @param id
+	 * @return
+	 * @throws Exception
+	 */
+	public Costumer findByIDSCostumer(int id) throws Exception;
+	
+	/**
+	 * 
+	 * @return
+	 * @throws Exception
+	 */
+	public List<Costumer> findByCostumers() throws Exception;
+	
+	
 }

@@ -9,12 +9,13 @@ import javax.persistence.*;
  * 
  */
 @Entity
+@Table(name="business_headquarter")
 public class BusinessHeadquarter implements Serializable {
 	private static final long serialVersionUID = 1L;
-
-	// ! Variable de la consulta
-	public static final String FIND_BY_ID = "BusinessHeadquarter.FIND_BY_ID";
+	
 	public static final String FIND_ALL = "BusinessHeadquarter.FIND_ALL";
+	
+	public static final String FIND_ALL_ID= "BusinessHeadquarter.FIND_ALL_ID";
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)

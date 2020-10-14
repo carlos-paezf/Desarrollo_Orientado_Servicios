@@ -11,11 +11,11 @@ import javax.persistence.*;
 @Entity
 public class Provider implements Serializable {
 	private static final long serialVersionUID = 1L;
-
-	// ! Variable de la consulta
-	public static final String FIND_BY_ID = "Provider.FIND_BY_ID";
+	
 	public static final String FIND_ALL = "Provider.FIND_ALL";
 	
+	public static final String FIND_ALL_ID= "Provider.FIND_ALL_ID";
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id_provider")

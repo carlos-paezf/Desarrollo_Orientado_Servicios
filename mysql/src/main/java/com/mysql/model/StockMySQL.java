@@ -10,13 +10,13 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = "stock")
-public class StockMySQL implements Serializable {
+public class StockMysql implements Serializable {
 	private static final long serialVersionUID = 1L;
-
-	// ! Variable de la consulta
-	public static final String FIND_BY_ID = "Stock.FIND_BY_ID";
-	public static final String FIND_ALL = "Stock.FIND_ALL";
 	
+	public static final String FIND_ALL = "StockMysql.FIND_ALL";
+	
+	public static final String FIND_ALL_ID= "StockMysql.FIND_ALL_ID";
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id_stock")
@@ -27,7 +27,7 @@ public class StockMySQL implements Serializable {
 	@Column(name="name_stock")
 	private String nameStock;
 
-	public StockMySQL() {
+	public StockMysql() {
 	}
 
 	public int getIdStock() {

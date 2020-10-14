@@ -9,12 +9,13 @@ import javax.persistence.*;
  * 
  */
 @Entity
+@Table(name="geographic_location")
 public class GeographicLocation implements Serializable {
 	private static final long serialVersionUID = 1L;
-
-	// ! Variable de la consulta
-	public static final String FIND_BY_ID = "GeographicLocation.FIND_BY_ID";
+	
 	public static final String FIND_ALL = "GeographicLocation.FIND_ALL";
+	
+	public static final String FIND_ALL_ID= "GeographicLocation.FIND_ALL_ID";
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)

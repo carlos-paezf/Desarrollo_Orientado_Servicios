@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="3f01ff4d-6fd3-429a-8f5e-e5213d2d1707" activeEnvironment="Default" name="InventarioPostgresSQL" resourceRoot="" soapui-version="5.6.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="ca3b593e-88d4-436d-b853-47cd58efd1ff" wsaVersion="NONE" name="InventarioUstaServiceSoapBinding" type="wsdl" bindingName="{http://services.servicessoap.ustados.com/}InventarioUstaServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:8081/servicessoap/invetario?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8081/servicessoap/invetario?wsdl"><con:part><con:url>http://localhost:8081/servicessoap/invetario?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="InventarioUstaService" targetNamespace="http://services.servicessoap.ustados.com/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://services.servicessoap.ustados.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http">
+  <wsdl:types>
+    <xs:schema elementFormDefault="unqualified" targetNamespace="http://services.servicessoap.ustados.com/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="clientByDocument" type="tns:clientByDocument"/>
+      <xs:element name="clientByDocumentResponse" type="tns:clientByDocumentResponse"/>
+      <xs:element name="warehouses" type="tns:warehouses"/>
+      <xs:element name="warehousesResponse" type="tns:warehousesResponse"/>
+      <xs:complexType name="warehouses">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="idSupplier" type="xs:long"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="warehousesResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:warehouse"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="warehouse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="address" type="xs:string"/>
+          <xs:element minOccurs="0" name="administrator" type="xs:string"/>
+          <xs:element minOccurs="0" name="capacityPerM2" type="xs:string"/>
+          <xs:element minOccurs="0" name="idCity" type="xs:int"/>
+          <xs:element minOccurs="0" name="idWarehouse" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="clientByDocument">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="document" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="clientByDocumentResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:client"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="client">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="birthdate" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="contactEmail" type="xs:string"/>
+          <xs:element minOccurs="0" name="contactNumber" type="xs:string"/>
+          <xs:element minOccurs="0" name="document" type="xs:string"/>
+          <xs:element minOccurs="0" name="gender" type="xs:string"/>
+          <xs:element minOccurs="0" name="idClient" type="xs:long"/>
+          <xs:element minOccurs="0" name="name" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="warehousesResponse">
+    <wsdl:part element="tns:warehousesResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="clientByDocumentResponse">
+    <wsdl:part element="tns:clientByDocumentResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="warehouses">
+    <wsdl:part element="tns:warehouses" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="clientByDocument">
+    <wsdl:part element="tns:clientByDocument" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="invetario">
+    <wsdl:operation name="warehouses">
+      <wsdl:input message="tns:warehouses" name="warehouses"></wsdl:input>
+      <wsdl:output message="tns:warehousesResponse" name="warehousesResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="clientByDocument">
+      <wsdl:input message="tns:clientByDocument" name="clientByDocument"></wsdl:input>
+      <wsdl:output message="tns:clientByDocumentResponse" name="clientByDocumentResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="InventarioUstaServiceSoapBinding" type="tns:invetario">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="warehouses">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="warehouses">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="warehousesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="clientByDocument">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="clientByDocument">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="clientByDocumentResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="InventarioUstaService">
+    <wsdl:port binding="tns:InventarioUstaServiceSoapBinding" name="invetarioPort">
+      <soap:address location="http://localhost:8081/servicessoap/invetario"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8081/servicessoap/invetario</con:endpoint></con:endpoints><con:operation id="6a295771-e0e1-4426-aa06-708fa7b48f3b" isOneWay="false" action="" name="clientByDocument" bindingOperationName="clientByDocument" type="Request-Response" outputName="clientByDocumentResponse" inputName="clientByDocument" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="72f7e49a-3ad8-45b8-b56c-1c3e279e6ab8" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8081/servicessoap/invetario</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://services.servicessoap.ustados.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:clientByDocument>\r
+         <!--Optional:-->\r
+         <document>1234556</document>\r
+      </ser:clientByDocument>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://services.servicessoap.ustados.com/invetario/clientByDocument"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="c2e681ef-6328-4135-a720-eff33e4658cf" isOneWay="false" action="" name="warehouses" bindingOperationName="warehouses" type="Request-Response" outputName="warehousesResponse" inputName="warehouses" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="aebdc31f-983b-4134-9fde-29d8d1123180" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8081/servicessoap/invetario</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://services.servicessoap.ustados.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:warehouses>\r
+         <!--Optional:-->\r
+         <idSupplier>?</idSupplier>\r
+      </ser:warehouses>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://services.servicessoap.ustados.com/invetario/warehouses"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

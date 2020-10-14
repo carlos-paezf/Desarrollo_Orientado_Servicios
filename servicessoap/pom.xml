@@ -2,16 +2,19 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-
 	<modelVersion>4.0.0</modelVersion>
+
 	<groupId>ustados</groupId>
 	<artifactId>servicessoap</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
+
 	<name>servicessoap</name>
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
+
 	<repositories>
 		<repository>
 			<id>maven2-repository.jboss.com</id>
@@ -31,6 +34,7 @@
 			<layout>default</layout>
 		</repository>
 	</repositories>
+
 	<dependencies>
 		<dependency>
 			<groupId>com.sun.faces</groupId>
@@ -84,6 +88,7 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+
 		<dependency>
 			<groupId>javax</groupId>
 			<artifactId>javaee-web-api</artifactId>
@@ -117,11 +122,11 @@
 		</dependency>
 		<dependency>
 			<groupId>ustados</groupId>
-    		<artifactId>ejb_dos</artifactId>
+			<artifactId>ejb_dos</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 			<scope>provided</scope>
 		</dependency>
-		<dependency>
+			<dependency>
 			<groupId>ustados</groupId>
 			<artifactId>mysql</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
@@ -129,11 +134,12 @@
 		</dependency>
 		<dependency>
 			<groupId>ustados</groupId>
-			<artifactId>postgresql</artifactId>
+			<artifactId>postgres</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 			<scope>provided</scope>
 		</dependency>
 	</dependencies>
+
 	<build>
 		<plugins>
 			<plugin>
@@ -160,4 +166,5 @@
 			</plugin>
 		</plugins>
 	</build>
+
 </project>

@@ -10,12 +10,12 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = "product")
-public class ProductMySQL implements Serializable {
+public class ProductMysql implements Serializable {
 	private static final long serialVersionUID = 1L;
-
-	// ! Variable de la consulta
-	public static final String FIND_BY_ID = "Product.FIND_BY_ID";
-	public static final String FIND_ALL = "Product.FIND_ALL";
+	
+	public static final String FIND_ALL = "ProductMysql.FIND_ALL";
+	
+	public static final String FIND_ALL_ID= "ProductMysql.FIND_ALL_ID";
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -35,7 +35,7 @@ public class ProductMySQL implements Serializable {
 
 	private double price;
 
-	public ProductMySQL() {
+	public ProductMysql() {
 	}
 
 	public int getIdProduct() {

@@ -12,12 +12,13 @@ import java.util.Date;
 @Entity
 public class Costumer implements Serializable {
 	private static final long serialVersionUID = 1L;
-
-	// ! Variable de la consulta
-	public static final String FIND_BY_ID = "Costumer.FIND_BY_ID";
+	
 	public static final String FIND_ALL = "Costumer.FIND_ALL";
-	public static final String FIND_BY_DOCUMENT = "Costumer.FIND_BY_DOCUMENT";
+	
+	public static final String FIND_ALL_ID= "Costumer.FIND_ALL_ID";
 
+	public static final String FIND_BY_DOCUMENT = "Costumer.FIND_BY_DOCUMENT";
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id_costumer")
@@ -40,9 +41,9 @@ public class Costumer implements Serializable {
 	private String phoneNumber;
 
 	private String surname;
-
+	
 	private String document;
-
+	
 	public Costumer() {
 	}
 
@@ -110,11 +111,12 @@ public class Costumer implements Serializable {
 		this.surname = surname;
 	}
 
-	public String getDocument(){
-		return this.document;
+	public String getDocument() {
+		return document;
 	}
 
-	public void setDocument(String document){
+	public void setDocument(String document) {
 		this.document = document;
 	}
+
 }

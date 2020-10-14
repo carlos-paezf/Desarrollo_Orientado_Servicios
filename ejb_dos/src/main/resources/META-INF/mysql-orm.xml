@@ -1,91 +1,161 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<entity-mappings version="2.2" 
-xmlns="http://xmlns.jcp.org/xml/ns/persistence/orm" 
-xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence/orm http://xmlns.jcp.org/xml/ns/persistence/orm_2_2.xsd">
+<entity-mappings version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence/orm http://xmlns.jcp.org/xml/ns/persistence/orm_2_2.xsd">
 
-    <named-query name="BusinessHeadquarter.FIND_BY_ID">
-        <query>SELECT b FROM BusinessHeadquarter b WHERE b.idBusinessHeadquarter = :idBusinessHeadquarter</query>
-    </named-query>
+	<named-query name="BusinessHeadquarter.FIND_ALL">
+		<query>
+			SELECT  b
+			FROM BusinessHeadquarter b
+		</query>
+	</named-query>
 
-    <named-query name="BusinessHeadquarter.FIND_ALL">
-        <query>SELECT b FROM BusinessHeadquarter b </query>
-    </named-query>
+	<named-query name="BusinessHeadquarter.FIND_ALL_ID">
+		<query>
+			SELECT  b
+			FROM BusinessHeadquarter b
+			WHERE b.idBusinessHeadquarter=:id
+		</query>
+	</named-query>
 
-    <named-query name="BusinessHeadquarterProvider.FIND_BY_ID">
-        <query>SELECT bp FROM BusinessHeadquarterProvider bp WHERE bp.idBusinessHeadquarterProvider = :idBusinessHeadquarterProvider</query>
-    </named-query>
+	<named-query name="BusinessHeadquarterProvider.FIND_ALL">
+		<query>
+			SELECT bp
+			FROM BusinessHeadquarterProvider bp
+		</query>
+	</named-query>
 
-    <named-query name="BusinessHeadquarterProvider.FIND_ALL">
-        <query>SELECT bp FROM BusinessHeadquarterProvider bp </query>
-    </named-query>
+	<named-query name="BusinessHeadquarterProvider.FIND_ALL_ID">
+		<query>
+			SELECT bp
+			FROM BusinessHeadquarterProvider bp
+			WHERE bp.idBusinessHeadquarterProvider =:id
+		</query>
+	</named-query>
+	
+	<named-query name="BusinessHeadquarterStock.FIND_ALL">
+		<query>
+			SELECT bs
+			FROM BusinessHeadquarterStock bs
+		</query>
+	</named-query>
 
-    <named-query name="BusinessHeadquarterStock.FIND_BY_ID">
-        <query>SELECT bs FROM BusinessHeadquarterStock bs WHERE bs.idBusinessHeadquarterStock = :idBusinessHeadquarterStock</query>
-    </named-query>
+	<named-query name="BusinessHeadquarterStock.FIND_ALL_ID">
+		<query>
+			SELECT bs
+			FROM BusinessHeadquarterStock bs
+			WHERE bs.idBusinessHeadquarterStock =:id
+		</query>
+	</named-query>
+	
+	<named-query name="Costumer.FIND_ALL">
+		<query>
+			SELECT c
+			FROM Costumer c
+		</query>
+	</named-query>
 
-    <named-query name="BusinessHeadquarterStock.FIND_ALL">
-        <query>SELECT bs FROM BusinessHeadquarterStock bs </query>
-    </named-query>
+	<named-query name="Costumer.FIND_ALL_ID">
+		<query>
+			SELECT c
+			FROM Costumer c
+			WHERE c.idCostumer =:id
+		</query>
+	</named-query>
+	<named-query name="GeographicLocation.FIND_ALL">
+		<query>
+			SELECT g
+			FROM GeographicLocation g
+		</query>
+	</named-query>
 
-    <named-query name="Costumer.FIND_BY_ID">
-        <query>SELECT c FROM Costumer c WHERE c.idCostumer = :idCostumer</query>
-    </named-query>
+	<named-query name="GeographicLocation.FIND_ALL_ID">
+		<query>
+			SELECT g
+			FROM GeographicLocation g
+			WHERE g.idGeographicLocation = :id
+		</query>
+	</named-query>
+	
+	<named-query name="InvoiceMysq.FIND_ALL">
+		<query>
+			SELECT i
+			FROM InvoiceMysq i
+		</query>
+	</named-query>
 
-    <named-query name="Costumer.FIND_ALL">
-        <query>SELECT c FROM Costumer c </query>
-    </named-query>
+	<named-query name="InvoiceMysq.FIND_ALL_ID">
+		<query>
+			SELECT i
+			FROM InvoiceMysq i
+			WHERE i.idInvoice =:id
+		</query>
+	</named-query>
+	
+	<named-query name="ProductMysql.FIND_ALL">
+		<query>
+			SELECT p
+			FROM ProductMysql p
+		</query>
+	</named-query>
 
-    <named-query name="GeographicLocation.FIND_BY_ID">
-        <query>SELECT g FROM GeographicLocation g WHERE g.idGeographicLocation = :idGeographicLocation</query>
-    </named-query>
+	<named-query name="ProductMysql.FIND_ALL_ID">
+		<query>
+			SELECT p
+			FROM ProductMysql p
+			WHERE p.idProduct = :id
+		</query>
+	</named-query>
+	
+	<named-query name="Provider.FIND_ALL">
+		<query>
+			SELECT p
+			FROM Provider p
+		</query>
+	</named-query>
 
-    <named-query name="GeographicLocation.FIND_ALL">
-        <query>SELECT g FROM GeographicLocation g </query>
-    </named-query>
+	<named-query name="Provider.FIND_ALL_ID">
+		<query>
+			SELECT p
+			FROM Provider p
+			WHERE p.idProvider =:id
+		</query>
+	</named-query>
+	
+	<named-query name="StockInvoice.FIND_ALL">
+		<query>
+			SELECT s
+			FROM StockInvoice s
+		</query>
+	</named-query>
 
-    <named-query name="InvoiceMySQL.FIND_BY_ID">
-        <query>SELECT i FROM InvoiceMySQL i WHERE i.idInvoice = :idInvoice</query>
-    </named-query>
+	<named-query name="StockInvoice.FIND_ALL_ID">
+		<query>
+			SELECT s
+			FROM StockInvoice s
+			WHERE s.idStockInvoice = :id
+		</query>
+	</named-query>
 
-    <named-query name="InvoiceMySQL.FIND_ALL">
-        <query>SELECT i FROM InvoiceMySQL i </query>
-    </named-query>
+	<named-query name="StockMysql.FIND_ALL">
+		<query>
+			SELECT sm
+			FROM StockMysql sm
+		</query>
+	</named-query>
 
-    <named-query name="ProductMySQL.FIND_BY_ID">
-        <query>SELECT p FROM ProductMySQL p WHERE p.idProduct = :idProduct</query>
-    </named-query>
-
-    <named-query name="ProductMySQL.FIND_ALL">
-        <query>SELECT p FROM ProductMySQL p </query>
-    </named-query>
-
-    <named-query name="Provider.FIND_BY_ID">
-        <query>SELECT pv FROM Provider pv WHERE pv.idProvider = :idProvider</query>
-    </named-query>
-
-    <named-query name="Provider.FIND_ALL">
-        <query>SELECT pv FROM Provider pv </query>
-    </named-query>
-
-    <named-query name="StockInvoice.FIND_BY_ID">
-        <query>SELECT si FROM StockInvoice si WHERE si.idStockInvoice = :idStockInvoice</query>
-    </named-query>
-
-    <named-query name="StockInvoice.FIND_ALL">
-        <query>SELECT si FROM StockInvoice si </query>
-    </named-query>
-
-    <named-query name="StockMySQL.FIND_BY_ID">
-        <query>SELECT s FROM StockMySQL s WHERE s.idStock = :idStock</query>
-    </named-query>
-
-    <named-query name="StockMySQL.FIND_ALL">
-        <query>SELECT s FROM StockMySQL s </query>
-    </named-query>
-
-    <named-query name="Costumer.FIND_BY_DOCUMENT">
-        <query>SELECT c FROM Costumer c WHERE c.document = :doc</query>
-    </named-query>
+	<named-query name="StockMysql.FIND_ALL_ID">
+		<query>
+			SELECT sm
+			FROM StockMysql sm
+			WHERE sm.idStock = :id
+		</query>
+	</named-query>
+	
+	<named-query name="Costumer.FIND_BY_DOCUMENT">
+		<query>
+			SELECT c
+			FROM Costumer c
+			WHERE c.document = :doc
+		</query>
+	</named-query>
 
 </entity-mappings>
