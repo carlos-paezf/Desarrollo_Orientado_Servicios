@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="org.tempuri.SistemStatusLocator"/>
+<fullyQualifiedTypeName name="org.tempuri.ISistemStatus"/>
+<fullyQualifiedTypeName name="org.datacontract.schemas._2004._07.SICC_Domain.WebStatus"/>
+<fullyQualifiedTypeName name="java.util.Calendar"/>
+</qualifiedTypeNameHistroy>

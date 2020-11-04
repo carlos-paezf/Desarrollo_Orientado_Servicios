@@ -1,0 +1,20 @@
+package com.soapclient.webclient.clientws;
+import java.io.Serializable;
+
+public class WsSoapClientStatus implements Serializable{
+
+	private static final long seralVersioUID = 1L;
+	
+	public WsSoapClientStatus() {
+		super();
+	}
+	
+	public void statusConsumer() {
+		String retorno = "";
+		try {
+			retorno = "Successful";
+		} catch (Exception e) {
+			retorno = "fail";
+		}
+	}
+}

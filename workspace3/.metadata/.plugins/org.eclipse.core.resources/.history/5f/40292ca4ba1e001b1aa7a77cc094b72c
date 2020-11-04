@@ -1,0 +1,24 @@
+package com.soapclient.webclient.clientws;
+
+import java.io.Serializable;
+
+import org.tempuri.SistemStatusLocator;
+
+public class WsSoapClientStatus implements Serializable{
+
+	private static final long seralVersioUID = 1L;
+	
+	public WsSoapClientStatus() {
+		super();
+	}
+	
+	public void statusConsumer() {
+		String retorno = "";
+		try {
+			SistemStatusLocator locator = new SistemStatusLocator();
+			retorno = "Successful";
+		} catch (Exception e) {
+			retorno = "fail";
+		}
+	}
+}

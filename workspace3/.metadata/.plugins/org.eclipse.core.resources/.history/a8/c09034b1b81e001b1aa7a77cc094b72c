@@ -1,0 +1,167 @@
+<%@page contentType="text/html;charset=UTF-8"%>
+<% request.setCharacterEncoding("UTF-8"); %>
+<HTML>
+<HEAD>
+<TITLE>Result</TITLE>
+</HEAD>
+<BODY>
+<H1>Result</H1>
+
+<jsp:useBean id="sampleISistemStatusProxyid" scope="session" class="org.tempuri.ISistemStatusProxy" />
+<%
+if (request.getParameter("endpoint") != null && request.getParameter("endpoint").length() > 0)
+sampleISistemStatusProxyid.setEndpoint(request.getParameter("endpoint"));
+%>
+
+<%
+String method = request.getParameter("method");
+int methodID = 0;
+if (method == null) methodID = -1;
+
+if(methodID != -1) methodID = Integer.parseInt(method);
+boolean gotMethod = false;
+
+try {
+switch (methodID){ 
+case 2:
+        gotMethod = true;
+        java.lang.String getEndpoint2mtemp = sampleISistemStatusProxyid.getEndpoint();
+if(getEndpoint2mtemp == null){
+%>
+<%=getEndpoint2mtemp %>
+<%
+}else{
+        String tempResultreturnp3 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(getEndpoint2mtemp));
+        %>
+        <%= tempResultreturnp3 %>
+        <%
+}
+break;
+case 5:
+        gotMethod = true;
+        String endpoint_0id=  request.getParameter("endpoint8");
+            java.lang.String endpoint_0idTemp = null;
+        if(!endpoint_0id.equals("")){
+         endpoint_0idTemp  = endpoint_0id;
+        }
+        sampleISistemStatusProxyid.setEndpoint(endpoint_0idTemp);
+break;
+case 10:
+        gotMethod = true;
+        org.tempuri.ISistemStatus getISistemStatus10mtemp = sampleISistemStatusProxyid.getISistemStatus();
+if(getISistemStatus10mtemp == null){
+%>
+<%=getISistemStatus10mtemp %>
+<%
+}else{
+        if(getISistemStatus10mtemp!= null){
+        String tempreturnp11 = getISistemStatus10mtemp.toString();
+        %>
+        <%=tempreturnp11%>
+        <%
+        }}
+break;
+case 13:
+        gotMethod = true;
+        String p_NombreUsuario_1id=  request.getParameter("p_NombreUsuario16");
+            java.lang.String p_NombreUsuario_1idTemp = null;
+        if(!p_NombreUsuario_1id.equals("")){
+         p_NombreUsuario_1idTemp  = p_NombreUsuario_1id;
+        }
+        String p_Password_2id=  request.getParameter("p_Password18");
+            java.lang.String p_Password_2idTemp = null;
+        if(!p_Password_2id.equals("")){
+         p_Password_2idTemp  = p_Password_2id;
+        }
+        java.lang.String loginUsuario13mtemp = sampleISistemStatusProxyid.loginUsuario(p_NombreUsuario_1idTemp,p_Password_2idTemp);
+if(loginUsuario13mtemp == null){
+%>
+<%=loginUsuario13mtemp %>
+<%
+}else{
+        String tempResultreturnp14 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(loginUsuario13mtemp));
+        %>
+        <%= tempResultreturnp14 %>
+        <%
+}
+break;
+case 20:
+        gotMethod = true;
+        String token_3id=  request.getParameter("token23");
+            java.lang.String token_3idTemp = null;
+        if(!token_3id.equals("")){
+         token_3idTemp  = token_3id;
+        }
+        String fechaUTC_5id=  request.getParameter("fechaUTC27");
+            java.util.Calendar fechaUTC_5idTemp = null;
+        if(!fechaUTC_5id.equals("")){
+        java.text.DateFormat dateFormatfechaUTC27 = java.text.DateFormat.getDateInstance();
+        java.util.Date dateTempfechaUTC27  = dateFormatfechaUTC27.parse(fechaUTC_5id);
+         fechaUTC_5idTemp = new java.util.GregorianCalendar();
+        fechaUTC_5idTemp.setTime(dateTempfechaUTC27);
+        }
+        String idApp_6id=  request.getParameter("idApp29");
+            java.lang.Integer idApp_6idTemp = null;
+        if(!idApp_6id.equals("")){
+         idApp_6idTemp  = java.lang.Integer.valueOf(idApp_6id);
+        }
+        String observaciones_7id=  request.getParameter("observaciones31");
+            java.lang.String observaciones_7idTemp = null;
+        if(!observaciones_7id.equals("")){
+         observaciones_7idTemp  = observaciones_7id;
+        }
+        String usuarioCreador_8id=  request.getParameter("usuarioCreador33");
+            java.lang.String usuarioCreador_8idTemp = null;
+        if(!usuarioCreador_8id.equals("")){
+         usuarioCreador_8idTemp  = usuarioCreador_8id;
+        }
+        String creadoUTC_9id=  request.getParameter("creadoUTC35");
+            java.util.Calendar creadoUTC_9idTemp = null;
+        if(!creadoUTC_9id.equals("")){
+        java.text.DateFormat dateFormatcreadoUTC35 = java.text.DateFormat.getDateInstance();
+        java.util.Date dateTempcreadoUTC35  = dateFormatcreadoUTC35.parse(creadoUTC_9id);
+         creadoUTC_9idTemp = new java.util.GregorianCalendar();
+        creadoUTC_9idTemp.setTime(dateTempcreadoUTC35);
+        }
+        String disponible_10id=  request.getParameter("disponible37");
+            java.lang.Boolean disponible_10idTemp = null;
+        if(!disponible_10id.equals("")){
+         disponible_10idTemp  = java.lang.Boolean.valueOf(disponible_10id);
+        }
+        %>
+        <jsp:useBean id="org1datacontract1schemas1_20041_071SICC_Domain1WebStatus_4id" scope="session" class="org.datacontract.schemas._2004._07.SICC_Domain.WebStatus" />
+        <%
+        org1datacontract1schemas1_20041_071SICC_Domain1WebStatus_4id.setFechaUTC(fechaUTC_5idTemp);
+        org1datacontract1schemas1_20041_071SICC_Domain1WebStatus_4id.setIdApp(idApp_6idTemp);
+        org1datacontract1schemas1_20041_071SICC_Domain1WebStatus_4id.setObservaciones(observaciones_7idTemp);
+        org1datacontract1schemas1_20041_071SICC_Domain1WebStatus_4id.setUsuarioCreador(usuarioCreador_8idTemp);
+        org1datacontract1schemas1_20041_071SICC_Domain1WebStatus_4id.setCreadoUTC(creadoUTC_9idTemp);
+        org1datacontract1schemas1_20041_071SICC_Domain1WebStatus_4id.setDisponible(disponible_10idTemp);
+        java.lang.Integer webStatus20mtemp = sampleISistemStatusProxyid.webStatus(token_3idTemp,org1datacontract1schemas1_20041_071SICC_Domain1WebStatus_4id);
+if(webStatus20mtemp == null){
+%>
+<%=webStatus20mtemp %>
+<%
+}else{
+        String tempResultreturnp21 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(webStatus20mtemp));
+        %>
+        <%= tempResultreturnp21 %>
+        <%
+}
+break;
+}
+} catch (Exception e) { 
+%>
+Exception: <%= org.eclipse.jst.ws.util.JspUtils.markup(e.toString()) %>
+Message: <%= org.eclipse.jst.ws.util.JspUtils.markup(e.getMessage()) %>
+<%
+return;
+}
+if(!gotMethod){
+%>
+result: N/A
+<%
+}
+%>
+</BODY>
+</HTML>
